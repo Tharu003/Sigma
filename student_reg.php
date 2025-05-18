@@ -9,7 +9,6 @@
   <style>
     body {
       background-image: url(images/st_reg2.jpg);
-      /* filter: blur(8px); */
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'Inter', sans-serif;
@@ -17,14 +16,14 @@
 
     .form-container {
     
-  background-color: rgba(177, 165, 165, 0.6); /* white with 60% opacity */
-  border: 1px solid rgba(0, 0, 0, 0.2);       /* light border */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);  /* subtle shadow */
-  padding: 60px;
-  border-radius: 12px;
-   max-width: 700px;  /* width එක fix කරන්න */
-  margin: 50px auto; 
-  
+      background-color: rgba(177, 165, 165, 0.6); 
+      border: 1px solid rgba(0, 0, 0, 0.2);      
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+      padding: 60px;
+      border-radius: 12px;
+      max-width: 700px; 
+      margin: 50px auto; 
+      
 
 
     }
