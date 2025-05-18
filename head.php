@@ -64,11 +64,11 @@
         }
 
         .right_area i {
-            margin-right: 10px; /* Space between icon and text */
+            margin-right: 10px;
         }
 
         .right_area span {
-            margin-left: 5px; /* Additional space if needed */
+            margin-left: 5px; 
         }
 
         .logout_btn {
