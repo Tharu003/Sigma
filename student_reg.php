@@ -130,7 +130,7 @@
 
           <div class="form-group">
             <label>Email Address</label>
-            <input type="text" class="form-control"name="email" id="hemail" placeholder="Enter Email Address">
+            <input type="email" class="form-control"name="email" id="hemail" placeholder="Enter Email Address">
           </div>
 
           <div class="form-group">
