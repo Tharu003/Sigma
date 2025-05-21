@@ -16,7 +16,7 @@
 
     .form-container {
     
-      background-color: rgba(177, 165, 165, 0.6); 
+      background-color: rgba(158, 238, 239, 0.53); 
       border: 1px solid rgba(0, 0, 0, 0.2);      
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
       padding: 60px;
@@ -60,7 +60,7 @@
     }
 
     .btn-secondary {
-      background-color:rgb(32, 14, 65);
+      background-color:rgb(40, 4, 46);
       border: none;
       padding: 10px 30px;
       font-size: 15px;
@@ -96,41 +96,35 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="form-container">
-        <h1 class="form-title">Student Registration Form</h1>
+        <h1 class="form-title">Teacher Registration Form</h1>
         <form method="post" id="form">
           <div class="form-group">
             <label>Full Name</label>
-            <input type="text" class="form-control" id="hname" placeholder="Enter full name">
+            <input type="text" class="form-control" id="tname" placeholder="Enter full name">
           </div>
 
           <div class="form-group">
             <label>Address</label>
-            <input type="text" class="form-control" id="hadd" placeholder="Enter address">
+            <input type="text" class="form-control" id="tadd" placeholder="Enter address">
           </div>
 
           <div class="form-group">
             <label>Date of Birth</label>
-            <input type="date" class="form-control" id="hdob">
+            <input type="date" class="form-control" id="tdob">
           </div>
 
           <div class="form-group">
-            <label>Whatsapp Number</label>
-            <input type="tel" class="form-control" id="htel" placeholder="Enter phone number">
-          </div>
-
-          <div class="form-group">
-            <label>Guardian's Name</label>
-            <input type="text" class="form-control" id="hgn" placeholder="Enter guardian's name">
-          </div>
-
-          <div class="form-group">
-            <label>Guardian's Contact Number</label>
-            <input type="tel" class="form-control" id="hgpn" placeholder="Enter guardian's phone number">
+            <label>Contact Number</label>
+            <input type="tel" class="form-control" id="tcn" placeholder="Enter phone number">
           </div>
 
           <div class="form-group">
             <label>Email Address</label>
-            <input type="text" class="form-control" id="hemail" placeholder="Enter Email Address">
+            <input type="text" class="form-control" id="temail" placeholder="Enter Email Address">
+          </div>
+          <div class="form-group">
+            <label>Higher Qualification</label>
+            <input type="text" class="form-control" id="thq" placeholder="Enter higher qualification">
           </div>
 
           <div class="text-center mt-4">
