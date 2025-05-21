@@ -97,40 +97,45 @@
     <div class="col-md-8">
       <div class="form-container">
         <h1 class="form-title">Student Registration Form</h1>
-        <form method="post" id="form">
+        <form method="post" action="student_save.php" id="form">
           <div class="form-group">
             <label>Full Name</label>
-            <input type="text" class="form-control" id="hname" placeholder="Enter full name">
+            <input type="text" class="form-control" name="full_name"id="hname" placeholder="Enter full name">
           </div>
 
           <div class="form-group">
             <label>Address</label>
-            <input type="text" class="form-control" id="hadd" placeholder="Enter address">
+            <input type="text" class="form-control" name="address"id="hadd" placeholder="Enter address">
           </div>
 
           <div class="form-group">
             <label>Date of Birth</label>
-            <input type="date" class="form-control" id="hdob">
+            <input type="date" class="form-control"name="dob"  id="hdob">
           </div>
 
           <div class="form-group">
             <label>Whatsapp Number</label>
-            <input type="tel" class="form-control" id="htel" placeholder="Enter phone number">
+            <input type="tel" class="form-control" id="htel"name="whatsapp_no" placeholder="Enter phone number">
           </div>
 
           <div class="form-group">
             <label>Guardian's Name</label>
-            <input type="text" class="form-control" id="hgn" placeholder="Enter guardian's name">
+            <input type="text" class="form-control"name="guardian_name" id="hgn" placeholder="Enter guardian's name">
           </div>
 
           <div class="form-group">
             <label>Guardian's Contact Number</label>
-            <input type="tel" class="form-control" id="hgpn" placeholder="Enter guardian's phone number">
+            <input type="tel" class="form-control"name="guardian_contact" id="hgpn" placeholder="Enter guardian's phone number">
           </div>
 
           <div class="form-group">
             <label>Email Address</label>
-            <input type="text" class="form-control" id="hemail" placeholder="Enter Email Address">
+            <input type="text" class="form-control"name="email" id="hemail" placeholder="Enter Email Address">
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" class="form-control"name="password" id="pword" placeholder="Enter Your Password">
           </div>
 
           <div class="text-center mt-4">
@@ -138,15 +143,11 @@
           </div>
 
           <div class="text-center mt-3">
-            <a href="../login.php">Back to Login</a>
+            <a href="login.php">Back to Login</a>
           </div>
         </form>
 
-        <div id="mdata" class="mt-4"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
+        
 </body>
 </html>
+

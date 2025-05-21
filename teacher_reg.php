@@ -127,12 +127,18 @@
             <input type="text" class="form-control" id="thq" placeholder="Enter higher qualification">
           </div>
 
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" class="form-control" id="pword" placeholder="Enter Your Password">
+          </div>
+
+
           <div class="text-center mt-4">
             <button type="submit" class="btn btn-secondary px-4">Submit</button>
           </div>
 
           <div class="text-center mt-3">
-            <a href="../login.php">Back to Login</a>
+            <a href="login.php">Back to Login</a>
           </div>
         </form>
 

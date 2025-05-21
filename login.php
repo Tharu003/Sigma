@@ -91,7 +91,7 @@
   </style>
 </head>
 <body>
-
+<form action="logdata.php" method="POST">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -100,12 +100,12 @@
         <form method="post" id="form">
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+            <input type="email" required class="form-control" id="email"name="email" placeholder="Enter Your Email">
           </div>
 
           <div class="form-group">
             <label>Password</label>
-            <input type="text" class="form-control" id="pwrd" placeholder="Enter Your Password">
+            <input type="text" required class="form-control" id="pwrd"name="password" placeholder="Enter Your Password">
           </div>
 
           <div class="text-center mt-4">
