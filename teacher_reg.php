@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Student Registration</title>
+  <title>Teacher Registration</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url(images/st_reg2.jpg);
+      background-image: url(images/tea_reg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'Inter', sans-serif;
@@ -16,7 +16,7 @@
 
     .form-container {
     
-      background-color: rgba(158, 238, 239, 0.53); 
+      background-color: rgba(168, 172, 172, 0.53); 
       border: 1px solid rgba(0, 0, 0, 0.2);      
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
       padding: 60px;
@@ -120,7 +120,7 @@
 
           <div class="form-group">
             <label>Email Address</label>
-            <input type="text" class="form-control" id="temail" placeholder="Enter Email Address">
+            <input type="email" class="form-control" id="temail" placeholder="Enter Email Address">
           </div>
           <div class="form-group">
             <label>Higher Qualification</label>
