@@ -82,3 +82,13 @@ CREATE TABLE Class_For_Teacher (
     FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id),
     FOREIGN KEY (class_id) REFERENCES Class(class_id)
 );
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('student', 'teacher') NOT NULL,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
