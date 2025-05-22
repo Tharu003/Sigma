@@ -113,8 +113,13 @@
           </div>
 
           <div class="text-center mt-3">
-            New to Sigma?<a href="student_reg.php"> Create an account</a> 
+            New to Sigma As a Student?<a href="student_reg.php"> Create an account</a> 
           </div>
+
+          <div class="text-center mt-3">
+            New to Sigma As a teacher?<a href="teacher_reg.php"> Create an account</a> 
+          </div>
+
         </form>
 </body>
 </html>
