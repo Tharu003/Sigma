@@ -20,7 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $stmt->bind_param("ssssssss", $name, $address, $dob, $whatsapp, $guardian, $guardian_contact, $email, $password);
 
  if ($stmt->execute()) {
-        echo "<script>alert('Data saved successfully!'); window.history.back();</script>";
+    echo "Data inserted successfully.";
+
+    header("Location: st_home.php"); 
+   
+
     } else {
         echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
     }

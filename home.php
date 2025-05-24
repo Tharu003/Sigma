@@ -21,7 +21,6 @@
       padding: 0;
     }
 
-    /* Overlay for better text readability */
     body::before {
       content: "";
       position: absolute;
@@ -29,15 +28,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-       background-color: rgba(255, 255, 255, 0.6); 
-      
+      background-color: rgba(255, 255, 255, 0.6); 
       z-index: 0;
     }
 
     .content {
       position: relative;
       z-index: 1;
-      padding-top: 250px;
+      padding-top: 200px;
       padding-bottom: 100px;
     }
 
@@ -64,6 +62,19 @@
       background-color: rgb(31, 145, 165);
     }
 
+    .footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer p {
+      margin: 0;
+      
+    }
+
     @media (max-width: 576px) {
       h1 {
         font-size: 2.5rem;
@@ -76,11 +87,19 @@
     <h1>Sigma Institute</h1>
     <div class="row justify-content-center">
       <div class="col-md-3 col-sm-6 mb-3">
-        <button onclick="location.href='login.php'" class="btn btn-secondary">Student</button>
+        <button onclick="location.href='student_reg.php'" class="btn btn-secondary">Register</button>
       </div>
       <div class="col-md-3 col-sm-6 mb-3">
-        <button onclick="location.href='login.php'" class="btn btn-secondary">Admin</button>
+        <button onclick="location.href='login.php'" class="btn btn-secondary">Sign In</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer text-center">
+    <div class="container">
+      <p><strong>Sigma@gmail.com</strong> </p>
+      <p><strong>Hotline:</strong> +94 77 123 4567</p>
     </div>
   </div>
 </body>

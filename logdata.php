@@ -19,9 +19,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['name'] = $user['name'];
 
                 if ($user['role'] === 'student') {
-                    header("Location: head.php");
+                    header("Location: st_home.php");
                 } elseif ($user['role'] === 'teacher') {
-                    header("Location: head.php");
+                    header("Location: ad_home.php");
                 } else {
                     echo "Unknown user role.";
                 }
