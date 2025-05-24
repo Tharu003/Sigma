@@ -79,7 +79,7 @@
         <button onclick="location.href='login.php'" class="btn btn-secondary">Student</button>
       </div>
       <div class="col-md-3 col-sm-6 mb-3">
-        <button onclick="location.href='login.php'" class="btn btn-secondary">Teacher</button>
+        <button onclick="location.href='login.php'" class="btn btn-secondary">Admin</button>
       </div>
     </div>
   </div>

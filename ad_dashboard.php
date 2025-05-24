@@ -142,8 +142,9 @@
     </header>
     <div class="sidebar" id="sidebar">
         <a href="#"><i class="fas fa-home"></i><span>Dashboard</span></a>
-        <a href="#"><i class="fas fa-users-cog"></i><span>About Us</span></a>
-        <a href="#"><i class="fas fa-users-cog"></i><span>Teachers</span></a>
+        <a href="#"><i class="fas fa-users-cog"></i><span></span></a>
+        <a href="#"><i class="fas fa-users-cog"></i><span>Payment</span></a>
+        <a href="#"><i class="fas fa-home"></i><span>Classes</span></a>
         <a href="#"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
     </div>
 
