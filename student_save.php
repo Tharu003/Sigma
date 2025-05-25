@@ -22,7 +22,7 @@ $stmt->bind_param("ssssssss", $name, $address, $dob, $whatsapp, $guardian, $guar
  if ($stmt->execute()) {
     echo "Data inserted successfully.";
 
-    header("Location: st_home.php"); 
+    header("Location: st_dashboard.php"); 
    
 
     } else {
