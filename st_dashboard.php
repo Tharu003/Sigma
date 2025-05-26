@@ -7,10 +7,10 @@
   <title>Sigma Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
   <style>
+
    .main-content {
         margin-left: 0;
         margin-top: 60px;
@@ -36,7 +36,7 @@
 
 .overlay-text {
   position: absolute;
-  bottom: 120px; /* distance from bottom */
+  bottom: 120px; 
   left: 32%;
   transform: translateX(-50%);
   color: white;
@@ -59,6 +59,7 @@ body {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #fff;
+ 
 }
 
 .about-section {
@@ -233,8 +234,99 @@ body {
   margin-top: 5px;
    font-weight: bold;
 }
+.anim-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  /* background: linear-gradient(150deg, rgb(125, 151, 175), rgb(189, 175, 190)); */
+  padding: 60px 0;
+   position: relative; 
+  z-index: 1;
+  overflow: hidden;
+  transform-style: flat;
+}
 
- 
+.container {
+  position: relative;
+  width: 150px;
+  height: 180px;
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+   z-index: 2;
+}
+
+.container:hover {
+  animation-play-state: paused;
+}
+
+@keyframes animate {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(400px);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, rgba(4, 4, 4, 0.267));
+}
+
+.container span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 4px double #000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.container span img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+      background-color:rgb(3, 3, 29);
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 16px;
+      position: relative;
+      z-index: 999; 
+      transform: none !important;
+      perspective: none !important;
+      transform-style: flat !important;
+      isolation: isolate;
+    }
+
+    footer .footer-links a {
+      color: #ffffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+.abc h1{
+  color:black;
+  text-align: center;
+  font-size: 50px;
+  font-family: Snap ITC;
+}
+
   </style>
 </head>
 <body>
@@ -309,59 +401,62 @@ body {
       updateCount();
     });
   </script>
-
-
-<footer class="bg-dark text-light py-5">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-3 mb-4">
-        <h5 class="text-uppercase mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-light-50">Home</a></li>
-          <li><a href="#" class="text-decoration-none text-light-50">About Us</a></li>
-          <li><a href="#" class="text-decoration-none text-light-50">Teachers</a></li>
-          <li><a href="#" class="text-decoration-none text-light-50">Time Table</a></li>
-          <li><a href="#" class="text-decoration-none text-light-50">Contact us</a></li>
-           <li><a href="#" class="text-decoration-none text-light-50">performance</a></li>
-        </ul>
-      </div>
-
-    
-
-      <div class="col-md-3 mb-4">
-        <h5 class="text-uppercase mb-3">Contact Us</h5>
-        <ul class="list-unstyled">
-          <li><i class="bi bi-geo-alt-fill"></i> Sigma Institute, Sri Lanka</li>
-          <li><i class="bi bi-telephone-fill"></i> +94 77 123 4567</li>
-          <li><i class="bi bi-envelope-fill"></i> info@sigma.edu.lk</li>
-        </ul>
-        <div class="mt-3">
-          <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-        </div>
-      </div>
-
-
-      <div class="col-md-3 mb-4">
-        <h5 class="text-uppercase mb-3">Newsletter</h5>
-        <p>Stay updated with our latest news</p>
-        <form class="d-flex">
-          <input type="email" class="form-control me-2" placeholder="Your email">
-          <button class="btn btn-primary" type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-
-    <hr class="bg-light">
-
-    <div class="text-center">
-      <p class="mb-0 text-light-50">&copy; 2025 Sigma Institute. All Rights Reserved.</p>
-    </div>
+  <div class="abc">
+  <h1>Gallery Page</h1>
   </div>
-</footer>
+  <br>
+<div class="anim-body">
+  
+  <div class="container">
+    <span style="--i:1"><img src="images/img1.jpg"></span>
+    <span style="--i:2"><img src="images/img1.jpg"></span>
+    <span style="--i:3"><img src="images/img1.jpg"></span>
+    <span style="--i:4"><img src="images/img1.jpg"></span>
+    <span style="--i:5"><img src="images/img1.jpg"></span>
+    <span style="--i:6"><img src="images/img1.jpg"></span>
+    <span style="--i:7"><img src="images/img1.jpg"></span>
+    <span style="--i:8"><img src="images/img1.jpg"></span>
+    <span style="--i:9"><img src="images/img1.jpg"></span>
+    <span style="--i:10"><img src="images/img1.jpg"></span>
+    <span style="--i:11"><img src="images/img1.jpg"></span>
+    <span style="--i:12"><img src="images/img1.jpg"></span>
+    <span style="--i:13"><img src="images/img1.jpg"></span>
+    <span style="--i:14"><img src="images/img1.jpg"></span>
+    <span style="--i:15"><img src="images/img1.jpg"></span>
+    <span style="--i:16"><img src="images/img1.jpg"></span>
+  </div>
+</div>
+<br>
+<br>
+<footer>
+    <div class="footer-links mb-2">
+      <a href="index.php">Home</a> |
+      <a href="about.php">About</a> |
+      <a href="contact.php">Contact</a> |
+      <a href="privacy.php">Privacy</a>
+    </div>
+    <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
+  </footer>
 
+ 
+  <script>
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / 50);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+      updateCount();
+    });
+  </script>
 
 </body>
 </html>
