@@ -78,7 +78,36 @@ body {
   justify-content: center;
   align-items: center;
 } 
+.stats-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  background-color:rgb(228, 236, 238);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.stats-text {
+  flex: 1;
+  min-width: 300px;
+}
 
+.stats-text h3 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  font-family:Arial;
+}
+
+.stats-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+}
 
 
 
@@ -140,5 +169,54 @@ footer {
     
 </div>
 </div>
+
+<div class="contact-card">
+    <?php
+$Institute_name = "Sigma Educational Institute";
+$address = "No 21, Sisuru Mawatha,Rathgama Rd, Galle, Sri Lanka";
+$phone = "+94 41 248 6000";
+$email = "info@sigma.com";
+
+echo "<h2>Sigma Educational Institute</h2>";
+echo "<p><strong>Address:</strong> $address</p>";
+echo "<p><strong>Phone:</strong> $phone</p>";
+echo "<p><strong>Email:</strong> <a href='mailto:$email'>$email</a></p>";
+?>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-links mb-2">
+      <a href="index.php">Home</a> |
+      <a href="about.php">About</a> |
+      <a href="contact.php">Contact</a> |
+      <a href="privacy.php">Privacy</a>
+    </div>
+    <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
+  </footer>
 </body>
 </html>
