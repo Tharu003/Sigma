@@ -90,7 +90,7 @@
     }
 
     .sidebar a:hover {
-      background: blue;
+      background:blue;
       color: white;
     }
   </style>

@@ -8,208 +8,129 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
-
-   .main-content {
+    body {
+      background-color: #f8f9fa;
+    }
+    .main-content {
         margin-left: 0;
         margin-top: 60px;
         padding: 20px;
         transition: margin-left 0.3s ease;
     }
-
-    .sidebar.active ~ .main-content {
+     .sidebar.active ~ .main-content {
     margin-left: 250px;
     }
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-}
+    .form-container {
+      background-color: rgba(209, 218, 188, 0.53);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 40px auto;
+      height:600px;
+    }
+    .form-control:focus {
+      border-color:rgb(228, 15, 25);
+      box-shadow: 0 0 0 0.1rem rgba(226, 175, 218, 0.25);
+    }
+    .btn-primary {
+      background-color:rgb(57, 40, 215);
+      border: none;
+      padding: 10px 30px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay-text {
-  position: absolute;
-  bottom: 190px; 
-  left: 30%;
-  transform: translateX(-50%);
-  color: black;
-  font-size: 36px;
-}
-.overlay-text h4{
-    font-family:Poppins medium;
-    font-size:15px;
-}
-.overlay-text h1 {
-   font-size:40px;
-   font-family:Arial Black;
-}
-.overlay-text p{
-    font-family:Poppins medium;
-    font-size:15px;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff;
- 
-}
-
-.about-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 50px 30px;
-  flex-wrap: wrap;
-  gap: 60px;
- 
-}
-
-.image-area {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-} 
-.stats-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px;
-  background-color:rgb(228, 236, 238);
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1200px;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.stats-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.stats-text h3 {
-  font-size: 50px;
-  margin-bottom: 15px;
-  color:rgb(0, 0, 0);
-  font-weight: bold;
-  font-family:Arial;
-}
-
-.stats-text p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #333;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-      background-color:rgb(3, 3, 29);
+    .btn-secondary:hover {
+      background-color:rgb(24, 187, 216);
+    }
+    .form-container h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: rgb(13, 3, 54);
+      font-family: Arial, sans-serif;
+      margin-bottom: 30px;
+    }
+    .form-control {
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #495057;
+    }
+    .form-container2 {
+      max-width: 700px;
+      margin: 40px auto;
+    }
+    .form-container2 iframe {
+      width: 100%;
+      height: 600px;
+      border: 0;
+      border-radius: 12px;
+    }
+    footer {
+      background-color: rgb(3, 3, 29);
       color: #ffffff;
       text-align: center;
       padding: 30px 20px;
       font-size: 16px;
-      position: relative;
-      z-index: 999; 
-      transform: none !important;
-      perspective: none !important;
-      transform-style: flat !important;
-      isolation: isolate;
+      margin-top: 60px;
     }
-
     footer .footer-links a {
       color: #ffffff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 500;
     }
-
     footer .footer-links a:hover {
       text-decoration: underline;
     }
-    </style>
+  </style>
 </head>
 <body>
-<div class="main-content" id="mainContent">
-    <div class="image-container">
-    <img src="images/contactus.jpg" width="100%"height="600px">
-   <div class="overlay-text">
-    <h4>Home > Contact</h4>
-    <h1>Contact Us</h1>
-    <p>Get in touch with us</p>
-    
-</div>
-</div>
+  <div class="main-content" id="mainContent">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-container">
+            <h1><b>Contact Us</b></h1>
+            <form method="post" action="contact_process.php">
+              <div class="mb-3">
+                <input type="text" class="form-control" name="name" placeholder="Enter your Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Enter your Email" required>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Google Map -->
+        <div class="col-md-6">
+          <div class="form-container2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.041522586274!2d80.15592047485386!3d6.12511469386161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae17758112ee961%3A0xa67ea12ff768839f!2sMawadawila%20Playground!5e0!3m2!1sen!2slk!4v1748326404097!5m2!1sen!2slk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="contact-card">
-    <?php
-$Institute_name = "Sigma Educational Institute";
-$address = "No 21, Sisuru Mawatha,Rathgama Rd, Galle, Sri Lanka";
-$phone = "+94 41 248 6000";
-$email = "info@sigma.com";
-
-echo "<h2>Sigma Educational Institute</h2>";
-echo "<p><strong>Address:</strong> $address</p>";
-echo "<p><strong>Phone:</strong> $phone</p>";
-echo "<p><strong>Email:</strong> <a href='mailto:$email'>$email</a></p>";
-?>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer>
+  <footer>
     <div class="footer-links mb-2">
       <a href="index.php">Home</a> |
       <a href="about.php">About</a> |
@@ -218,5 +139,5 @@ echo "<p><strong>Email:</strong> <a href='mailto:$email'>$email</a></p>";
     </div>
     <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
   </footer>
-</body>
-</html>
+
+ 
