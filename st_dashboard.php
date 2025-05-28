@@ -343,7 +343,7 @@ footer {
 </div>
 <section class="about-section">
     <div class="image-area">
-      <div class="diamond"><img src="images/img1.jpg"width="20%" alt="Image 1"></div>
+      <div class="diamond"><img src="images/IMG14.jpg"width="20%" alt="Image 1"></div>
       
     </div>
 
@@ -408,22 +408,22 @@ footer {
 <div class="anim-body">
   
   <div class="container">
-    <span style="--i:1"><img src="images/img1.jpg"></span>
-    <span style="--i:2"><img src="images/img1.jpg"></span>
-    <span style="--i:3"><img src="images/img1.jpg"></span>
-    <span style="--i:4"><img src="images/img1.jpg"></span>
-    <span style="--i:5"><img src="images/img1.jpg"></span>
-    <span style="--i:6"><img src="images/img1.jpg"></span>
-    <span style="--i:7"><img src="images/img1.jpg"></span>
-    <span style="--i:8"><img src="images/img1.jpg"></span>
-    <span style="--i:9"><img src="images/img1.jpg"></span>
-    <span style="--i:10"><img src="images/img1.jpg"></span>
-    <span style="--i:11"><img src="images/img1.jpg"></span>
-    <span style="--i:12"><img src="images/img1.jpg"></span>
-    <span style="--i:13"><img src="images/img1.jpg"></span>
-    <span style="--i:14"><img src="images/img1.jpg"></span>
-    <span style="--i:15"><img src="images/img1.jpg"></span>
-    <span style="--i:16"><img src="images/img1.jpg"></span>
+    <span style="--i:1"><img src="images/IMG1.jpg"></span>
+    <span style="--i:2"><img src="images/IMG2.jpg"></span>
+    <span style="--i:3"><img src="images/IMG3.jpg"></span>
+    <span style="--i:4"><img src="images/IMG4.jpg"></span>
+    <span style="--i:5"><img src="images/IMG6.jpg"></span>
+    <span style="--i:6"><img src="images/IMG7.jpg"></span>
+    <span style="--i:7"><img src="images/IMG8.jpg"></span>
+    <span style="--i:8"><img src="images/IMG9.jpg"></span>
+    <span style="--i:9"><img src="images/IMG10.jpg"></span>
+    <span style="--i:10"><img src="images/IMG18.jpg"></span>
+    <span style="--i:11"><img src="images/IMG12.jpg"></span>
+    <span style="--i:12"><img src="images/IMG13.jpg"></span>
+    <span style="--i:13"><img src="images/IMG14.jpg"></span>
+    <span style="--i:14"><img src="images/IMG15.jpg"></span>
+    <span style="--i:15"><img src="images/IMG16.jpg"></span>
+    <span style="--i:16"><img src="images/IMG17.jpg"></span>
   </div>
 </div>
 <br>
