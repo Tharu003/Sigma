@@ -10,7 +10,15 @@
 
 
   <style>
-  
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+  .sidebar.active ~ .main-content {
+    margin-left: 250px;
+    }
 .teacher .filters-container {
     display: flex;
     justify-content: center;
@@ -102,6 +110,7 @@ footer {
   </style>
 
   <body>
+     <div class="main-content" id="mainContent">
 <div class="teacher">
     <div class="filters-container">
         <div class="filters">
@@ -158,6 +167,7 @@ footer {
     </div>
 
   </section>
+  </div>
   </div>
   </body>
 
