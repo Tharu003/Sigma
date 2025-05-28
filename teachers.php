@@ -10,6 +10,16 @@
 
 
   <style>
+.main-content {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.active ~ .main-content {
+    margin-left: 250px;
+}
   
 .teacher .filters-container {
     display: flex;
@@ -100,68 +110,99 @@ footer {
     }
 
   </style>
+  </head>
 
   <body>
 <div class="teacher">
     <div class="filters-container">
         <div class="filters">
             <div class="filter-input">
-                <input type="text" placeholder="Filter by Name" value>
+                <input type="text" placeholder="Filter by Name" >
             </div>
             <div class="filter-input">
-                <input type="text" placeholder="Filter by Subject" value>
+                <input type="text" placeholder="Filter by Subject" >
             </div>
         </div>
     </div>
 
     <section class="card-container">
-    <div class="card">
-      <img src="images/amith.png" alt="Amith Pussella">
-      <h3>Amith Pussella</h3>
-      <p>Science</p>
+    <div class="card"> <a href="sinhalateacher.php" >
+      <img src="images/suranjith.jpg" alt="Suranjith Vithanage">
+      <h3>Suranjith Vithanage</h3>
+      <p>Sinhala</p>
     </div>
 
-    <div class="card">
-      <img src="images/tissa.png" alt="Tissa Jananayake">
-      <h3>Tissa Jananayake</h3>
-      <p>Matematics</p>
-    </div>
-
-    <div class="card">
-      <img src="images/amith.png" alt="Chandika Jayamaha">
-      <h3>Chandika Jayamaha</h3>
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/ranil.jpg" alt="Ranil Gunarathne">
+      <h3>Ranil Gunarathne</h3>
       <p>English</p>
     </div>
 
-    <div class="card">
-      <img src="images/tissa.png" alt="Kelum Senanayaka">
-      <h3>Kelum Senanayaka</h3>
-      <p>Information Technoloy</p>
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/thilina.jpg" alt="Thilina Nayanajith">
+      <h3>Thilina Nayanajith</h3>
+      <p>ICT</p>
     </div>
 
-    <div class="card">
-      <img src="images/tissa.png" alt="Kelum Senanayaka">
-      <h3>Kelum Senanayaka</h3>
-      <p>Tamil</p>
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/thushara.jpg" alt="Thushara">
+      <h3>Thushara</h3>
+      <p>Business Studies</p>
     </div>
 
-    <div class="card">
-      <img src="images/tissa.png" alt="Kelum Senanayaka">
-      <h3>Kelum Senanayaka</h3>
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/jagath.jpg" alt="Jagath Nilantha">
+      <h3>Jagath Nilantha</h3>
       <p>History</p>
     </div>
 
-    <div class="card">
-      <img src="images/tissa.png" alt="Kelum Senanayaka">
-      <h3>Kelum Senanayaka</h3>
-      <p>Sinhala</p>
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/shashika.jpg" alt="Shashika Jayawardhane">
+      <h3>Shashika Jayawardhane</h3>
+      <p>Dancing</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/ravindu.jpg" alt="Ravindu Maduranga">
+      <h3>Ravindu Maduranga</h3>
+      <p>Mathematics</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/saranga.jpg" alt="Saranga Piyumal">
+      <h3>Saranga Piyumal</h3>
+      <p>Science</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/maduranga.jpg" alt="Maduranga">
+      <h3>Maduranga</h3>
+      <p>Arts</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/nimali.jpg" alt="Nimali Mendis">
+      <h3>Nimali Mendis</h3>
+      <p>Music</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/darshi.jpg" alt="Darshi Nadeeshani">
+      <h3>Darshi Nadeeshani</h3>
+      <p>Primary English</p>
+    </div>
+
+    <div class="card"><a href="sinhalateacher.php" >
+      <img src="images/sanjeewa.jpg" alt="K.A. Sanjeewa">
+      <h3>K.A. Sanjeewa</h3>
+      <p>3/4/5 Schoolership</p>
     </div>
 
   </section>
   </div>
-  </body>
 
-<footer>
+
+  <footer>
     <div class="footer-links mb-2">
       <a href="index.php">Home</a> |
       <a href="about.php">About</a> |
@@ -172,24 +213,7 @@ footer {
   </footer>
 
  
-  <script>
-    const counters = document.querySelectorAll('.count');
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = Math.ceil(target / 50);
-
-        if (count < target) {
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 20);
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
-      updateCount();
-    });
-  </script>
+  
 
 </body>
 </html>
