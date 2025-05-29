@@ -158,7 +158,7 @@
 
   <div class="sidebar" id="sidebar">
     <ul>
-      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="ad_dashboard.php"><i class="fas fa-home"></i> Home</a></li>
 
       <li class="dropdown">
         <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> Teachers <i class="fas fa-chevron-down"></i></button>

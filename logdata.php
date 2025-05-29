@@ -21,7 +21,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 if ($user['role'] === 'student') {
                     header("Location: st_dashboard.php");
                 } elseif ($user['role'] === 'teacher') {
-                    header("Location: ad_dashboard.php");
+                    header("Location: ad_home.php");
                 } else {
                     echo "Unknown user role.";
                 }
