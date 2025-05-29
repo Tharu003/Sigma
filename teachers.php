@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php include "st_home.php"; ?>
 <?php include "db.php"; ?>
 <!DOCTYPE html>
@@ -181,3 +182,5 @@
   </script>
 </body>
 </html>
+=======
+>>>>>>> Stashed changes
