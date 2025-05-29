@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sigma Institute</title>
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       position: relative;
       min-height: 100vh;
-      background-image: url('images/home.jpg'); /* Replace with your image path */
+      background-image: url('images/home.jpg'); 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -36,7 +34,7 @@
       position: relative;
       z-index: 1;
       padding-top: 200px;
-      padding-bottom: 100px;
+      padding-bottom: 250px;
     }
 
     h1 {
@@ -68,6 +66,7 @@
       padding: 20px 0;
       position: relative;
       z-index: 1;
+      bottom:20px;
     }
 
     .footer p {

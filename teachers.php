@@ -68,11 +68,18 @@
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+}
+.card-container a {
+  text-decoration: none;
+  color: inherit;
 }
 
+
+
 .card h3 {
-  color: #b88c2c;
+  color:rgb(90, 7, 7);
   font-weight: bold;
   margin: 10px 0 0;
 }
@@ -125,47 +132,47 @@ footer {
     </div>
 
     <section class="card-container">
-    <div class="card"> <a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php"  class="card">
       <img src="images/suranjith.jpg" alt="Suranjith Vithanage">
       <h3>Suranjith Vithanage</h3>
       <p>Sinhala</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php" class="card">
       <img src="images/ranil.jpg" alt="Ranil Gunarathne">
       <h3>Ranil Gunarathne</h3>
       <p>English</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php" class="card">
       <img src="images/thilina.jpg" alt="Thilina Nayanajith">
       <h3>Thilina Nayanajith</h3>
       <p>ICT</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php" class="card">
       <img src="images/thushara.jpg" alt="Thushara">
       <h3>Thushara</h3>
       <p>Business Studies</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php" class="card">
       <img src="images/jagath.jpg" alt="Jagath Nilantha">
       <h3>Jagath Nilantha</h3>
       <p>History</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <a href="sinhalateacher.php" class="card" >
       <img src="images/shashika.jpg" alt="Shashika Jayawardhane">
       <h3>Shashika Jayawardhane</h3>
       <p>Dancing</p>
-    </div>
+  </a>
 
-    <div class="card"><a href="sinhalateacher.php" >
+    <<a href="sinhalateacher.php" class="card">
       <img src="images/ravindu.jpg" alt="Ravindu Maduranga">
       <h3>Ravindu Maduranga</h3>
       <p>Mathematics</p>
-    </div>
+  </a>
 
     <div class="card"><a href="sinhalateacher.php" >
       <img src="images/saranga.jpg" alt="Saranga Piyumal">
