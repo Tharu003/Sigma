@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>add Subject</title>
+  <title>add teacher</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -101,23 +101,32 @@
 <body>
   
  <div class="main-content" id="mainContent">
-  <h2>Add Subject</h2>
-  <p>Home / Subjects / Add Subject </p>
+  <h2>Add Payment</h2>
+  <p>Home / Payment / Add Payment </p>
   <div class="card">
     
-    
+    <form id="payForm">
       <div class="form-group">
-        <label for="subid">Subject Id:</label>
-        <input type="text" id="subid" name="subid" required>
+        <label for="payid">Payment Id:</label>
+        <input type="text" id="payid" name="payid" required>
       </div>
       <br>
       <div class="form-group">
-        <label for="subname">Subject Name:</label>
-        <input type="text" id="subname" name="subname" required>
+        <label for="stid">Student Id:</label>
+        <input type="text" id="stid" name="stid" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
       </div>
       <br>
      
-      <br>
       <div class="button-group">
         <button type="submit" class="submit-btn">Submit</button>
         <button type="reset" class="clear-btn">Clear</button>

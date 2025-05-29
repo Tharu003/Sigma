@@ -47,13 +47,14 @@
       text-transform: uppercase;
       font-size: 22px;
       font-weight: 900;
+      
     }
 
     #sidebar_btn {
       font-size: 24px;
       color: darkblue;
       cursor: pointer;
-      margin-right: 955px;
+      margin-left: 50px;
     }
 
     .right_area {
@@ -62,6 +63,7 @@
       color: darkblue;
       font-size: 18px;
       font-weight: 700;
+      margin-left:auto;
     }
 
     .sidebar {
@@ -81,21 +83,10 @@
       left: 0;
     }
 
-    .sidebar a {
-      display: block;
-      color: white;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .sidebar a:hover {
-      background:blue;
-      color: white;
-    }
     .sidebar ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     .sidebar ul li {
@@ -109,7 +100,7 @@
       padding: 12px 20px;
       text-decoration: none;
       color: blue;
-      background-color:rgb(255, 255, 255);
+      background-color: white;
       border: none;
       width: 100%;
       text-align: left;
@@ -119,29 +110,36 @@
 
     .sidebar ul li a:hover,
     .dropdown-btn:hover {
-      background-color:blue;
-      color:white;
+      background-color: blue;
+      color: white;
     }
 
-    .submenu {
-      display: none;
-      color:white;
-    }
+   .submenu {
+  display: none;
+  padding-left: 10px;
+  border-left: 25px solid rgb(255, 255, 255); 
+  background-color: #f0f0f0;
+}
 
-    .submenu li a {
-      padding-left: 40px;
-      color:white;
-    }
+   .submenu li a {
+  padding: 30px 20px 10px 60px; 
+  font-size: 15px;
+  color: #333;
+  display: block;
+}
+
 
     .submenu li a:hover {
-      background-color:blue;
+      background-color: #007bff;
+      color: white;
     }
 
     .fas {
       margin-right: 10px;
     }
-    .sidebar ul dropdown{
-        color:white;
+
+    .fa-chevron-down {
+      margin-left: auto;
     }
   </style>
 </head>
@@ -159,85 +157,71 @@
   </header>
 
   <div class="sidebar" id="sidebar">
-  <ul>
-    <li><a href="st_dashboard.php"><i class="fas fa-home"></i> Home</a></li>
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
 
-    <li class="dropdown">
-      <button id="dropdownBtn" class="dropdown-btn">
-        <i class="fas fa-user-tie"></i> Teachers <i class="fas fa-chevron-down"></i>
-      </button>
-      <ul class="submenu" id="dropdownMenu" style="display: none;">
-  <li><a href="class.php"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Add Teachers</a></li>
-  <li><a href="class.php"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Manage Teachers</a></li>
-</ul>
+      <li class="dropdown">
+        <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> Teachers <i class="fas fa-chevron-down"></i></button>
+        <ul class="submenu">
+          <li><a href="addteacher.php"><i class="fas fa-user-plus"></i> Add Teacher</a></li>
+          <li><a href="manageteacher.php"><i class="fas fa-tasks"></i> Manage Teacher</a></li>
+        </ul>
+      </li>
 
-    </li>
+      <li class="dropdown">
+        <button class="dropdown-btn"><i class="fas fa-school"></i> Classes <i class="fas fa-chevron-down"></i></button>
+        <ul class="submenu">
+          <li><a href="addclass.php"><i class="fas fa-plus-square"></i> Add Classes</a></li>
+          <li><a href="manageclass.php"><i class="fas fa-cogs"></i> Manage Classes</a></li>
+        </ul>
+      </li>
 
-<li class="dropdown">
-  <button id="dropdownBtn1" class="dropdown-btn">
-    <i class="fas fa-user-tie"></i> Classes <i class="fas fa-chevron-down"></i>
-  </button>
-  <ul class="submenu" id="dropdownMenu1" style="display: none;">
-    <li><a href="addclass.php"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Add Class</a></li>
-    <li><a href="manageclass.php"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Manage Class</a></li>
-  </ul>
-</li>
+      <li class="dropdown">
+        <button class="dropdown-btn"><i class="fas fa-book"></i> Subjects <i class="fas fa-chevron-down"></i></button>
+        <ul class="submenu">
+          <li><a href="addsubject.php"><i class="fas fa-plus-circle"></i> Add Subject</a></li>
+          <li><a href="managesubject.php"><i class="fas fa-edit"></i> Manage Subject</a></li>
+        </ul>
+      </li>
 
-<li class="dropdown">
-  <button id="dropdownBtn2" class="dropdown-btn">
-    <i class="fas fa-book"></i> Subjects <i class="fas fa-chevron-down"></i>
-  </button>
-  <ul class="submenu" id="dropdownMenu2" style="display: none;">
-    <li><a href="#"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Add Subject</a></li>
-    <li><a href="#"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Manage Subject</a></li>
-  </ul>
-</li>
+      <li class="dropdown">
+        <button class="dropdown-btn"><i class="fas fa-money-check-alt"></i> Payment <i class="fas fa-chevron-down"></i></button>
+        <ul class="submenu">
+          <li><a href="addpay.php"><i class="fas fa-dollar-sign"></i> Add Payment</a></li>
+          <li><a href="managepay.php"><i class="fas fa-file-invoice-dollar"></i> Manage Payment</a></li>
+        </ul>
+      </li>
 
-<li class="dropdown">
-  <button id="dropdownBtn3" class="dropdown-btn">
-    <i class="fas fa-money-bill"></i> Payment <i class="fas fa-chevron-down"></i>
-  </button>
-  <ul class="submenu" id="dropdownMenu3" style="display: none;">
-    <li><a href="#"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Add Payment</a></li>
-    <li><a href="#"><i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Manage Payment</a></li>
-  </ul>
-</li>
-<li><a href="profile.php"><i class="fas fa-user"></i> Profile</a></li>
-    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+      <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
+  </div>
 
-</div>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Toggle sidebar
     const sidebar = document.getElementById('sidebar');
-const sidebarBtn = document.getElementById('sidebar_btn');
-
-sidebarBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
-
-  
-  const dropdowns = document.querySelectorAll('.dropdown');
-
-  dropdowns.forEach(dropdown => {
-    const button = dropdown.querySelector('.dropdown-btn');
-    const menu = dropdown.querySelector('.submenu');
-
-    button.addEventListener('click', () => {
-      const isVisible = menu.style.display === 'block';
-      // Close all submenus first
-      document.querySelectorAll('.submenu').forEach(sub => sub.style.display = 'none');
-      // Toggle current
-      menu.style.display = isVisible ? 'none' : 'block';
+    const sidebarBtn = document.getElementById('sidebar_btn');
+    sidebarBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
     });
-  });
 
+    // Toggle dropdowns
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-btn');
+      const menu = dropdown.querySelector('.submenu');
 
+      button.addEventListener('click', () => {
+        // Close all other submenus
+        document.querySelectorAll('.submenu').forEach(sub => {
+          if (sub !== menu) sub.style.display = 'none';
+        });
 
-
-
+        // Toggle the selected submenu
+        const isVisible = menu.style.display === 'block';
+        menu.style.display = isVisible ? 'none' : 'block';
+      });
+    });
   </script>
 
 </body>

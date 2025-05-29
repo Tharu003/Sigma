@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>add Subject</title>
+  <title>add teacher</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -101,22 +101,47 @@
 <body>
   
  <div class="main-content" id="mainContent">
-  <h2>Add Subject</h2>
-  <p>Home / Subjects / Add Subject </p>
+  <h2>Add Teacher</h2>
+  <p>Home / Teachers / Add Teachers </p>
   <div class="card">
     
-    
+   <form action="save_teacher.php" method="POST" id="teacherForm">
+
       <div class="form-group">
-        <label for="subid">Subject Id:</label>
-        <input type="text" id="subid" name="subid" required>
+        <label for="teacherName">Name:</label>
+        <input type="text" id="teacherName" name="teacherName" required>
       </div>
       <br>
       <div class="form-group">
-        <label for="subname">Subject Name:</label>
-        <input type="text" id="subname" name="subname" required>
+        <label for="teacherEmail">Email:</label>
+        <input type="email" id="teacherEmail" name="teacherEmail" required>
       </div>
       <br>
-     
+      <div class="form-group">
+        <label for="teacherContact">Contact Number:</label>
+        <input type="text" id="teacherContact" name="teacherContact" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="teacherdob">Date Of Birth:</label>
+        <input type="date" id="teacherdob" name="teacherdob" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="teacheradd">Address:</label>
+        <input type="text area" id="teacheradd" name="teacheradd" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="teacherpword">Password:</label>
+        <input type="password" id="teacherpword" name="teacherpword" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="teacherQualification">Higher Qualification:</label>
+        <input type="text" id="teacherQualification" name="teacherQualification" required>
+      </div>
+      <br>
       <br>
       <div class="button-group">
         <button type="submit" class="submit-btn">Submit</button>

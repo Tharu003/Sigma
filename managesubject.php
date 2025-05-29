@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Manage Classes</title>
+  <title>Manage Subjects</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
@@ -44,50 +44,60 @@
 <body>
 
 <div class="main-content" id="mainContent">
-  <h2>Manage Classes</h2>
-  <p>Home / Classes / Manage Classes</p>
+  <h2>Manage Subjects</h2>
+  <p>Home / Subjects / Manage Subjects</p>
 
   <div class="card">
-    <table id="studentTable" class="display nowrap" style="width:100%">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Grade</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-   <?php
-$conn = new mysqli("localhost", "root", "", "sigma_db");
+    <table id="subjectTable" class="display nowrap" style="width:100%">
+      <thead>
+        <tr>
+          <th>Subject ID</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        // DB connection
+        $conn = new mysqli("localhost", "root", "", "sigma_db");
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
 
-$result = $conn->query("SELECT * FROM class");
+        // Query subject data
+        $result = $conn->query("SELECT * FROM subject");
 
-while ($row = $result->fetch_assoc()) {
-    echo "<tr>
-            <td>{$row['class_id']}</td>
-            <td>{$row['grade']}</td>
-            <td>
-                <a href='edit_class.php?class_id={$row['class_id']}' class='btn btn-sm btn-success'>Edit</a>
-                <a href='delete_class.php?class_id={$row['class_id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure you want to delete this class?')\">Delete</a>
-            </td>
-          </tr>";
-}
-?>
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+          echo "<tr>
+        <td>" . htmlspecialchars($row['subject_id']) . "</td>
+        <td>" . htmlspecialchars($row['name']) . "</td>
+        <td>
+            <a href='edit_subject.php?subject_id=" . urlencode($row['subject_id']) . "' class='btn btn-sm btn-success'>Edit</a>
+            <a href='delete_subject.php?subject_id=" . urlencode($row['subject_id']) . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure you want to delete this subject?')\">Delete</a>
+        </td>
+      </tr>";
 
-  </tbody>
-</table>
+          }
+        } else {
+          echo "<tr><td colspan='3'>No subjects found.</td></tr>";
+        }
 
+        $conn->close();
+        ?>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <script>
   $(document).ready(function () {
-    $('#studentTable').DataTable({
+    $('#subjectTable').DataTable({
       dom: 'Plfrtip',
       searchPanes: {
         cascadePanes: true,
         viewTotal: true
-      },
+      }
     });
   });
 </script>
