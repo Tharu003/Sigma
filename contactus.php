@@ -139,5 +139,5 @@
     </div>
     <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
   </footer>
-
- 
+ </body>
+ </html>
