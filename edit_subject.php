@@ -4,7 +4,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle POST Request (Form Submit)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $subject_id = $conn->real_escape_string($_POST['subject_id']);
     $name = $conn->real_escape_string($_POST['name']);
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Handle GET Request (Load Subject to Edit)
+
 if (isset($_GET['subject_id'])) {
     $subject_id = $conn->real_escape_string($_GET['subject_id']);
     $result = $conn->query("SELECT * FROM subject WHERE subject_id='$subject_id'");

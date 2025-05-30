@@ -101,7 +101,7 @@
         <div class="col-md-6">
           <div class="form-container">
             <h1><b>Contact Us</b></h1>
-            <form method="post" action="contact_process.php">
+            <form method="post" action="save_contact.php">
               <div class="mb-3">
                 <input type="text" class="form-control" name="name" placeholder="Enter your Name" required>
               </div>

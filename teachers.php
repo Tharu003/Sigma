@@ -1,23 +1,67 @@
+<?php include "st_home.php";
+?>
 <?php
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$sql = "SELECT * FROM teacher";
+$result = $conn->query($sql);
 ?>
-<?php include "st_home.php";
-?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Our Teachers</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f6fa;
-      padding: 20px;
-    }
- .main-content {
+    <title>Our Teachers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .teacher-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        .teacher-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .teacher-card:hover {
+            transform: translateY(-5px);
+        }
+        .teacher-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .teacher-card h3 {
+            margin: 10px 0 5px;
+            color: #222;
+        }
+        .teacher-card p {
+            color: #666;
+            margin: 0 0 10px;
+        }
+        .teacher-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+         .main-content {
       margin-left: 80px;
       margin-top: 60px;
       padding: 20px;
@@ -26,72 +70,28 @@ if ($conn->connect_error) {
     .sidebar.active ~ .main-content {
       margin-left: 250px;
     }
-    h2 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 40px;
-    }
-
-    .teacher-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 10px;
-    }
-
-    .teacher-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-
-    .teacher-card:hover {
-      transform: scale(1.03);
-    }
-
-    .teacher-card h3 {
-      color: #2980b9;
-    }
-
-    .teacher-card p {
-      color: #555;
-      margin: 8px 0;
-    }
-
-    .teacher-card a {
-      text-decoration: none;
-      color: inherit;
-    }
-  </style>
+    </style>
 </head>
-<body><div class="main-content" id="mainContent">
-<h2>Meet Our Teachers</h2>
-
-<div class="teacher-grid">
-  <?php
-  $result = $conn->query("SELECT * FROM teacher");
-  if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-      echo "
-        <a href='teacher_profile.php?teacher_id={$row['teacher_id']}'>
-          <div class='teacher-card'>
-            <h3>{$row['full_name']}</h3>
-            <p><strong>Qualification:</strong> {$row['qualification']}</p>
-            <p><strong>Email:</strong> {$row['email']}</p>
-          </div>
-        </a>
-      ";
+<body>
+<div class="main-content" id="mainContent">
+<h2 style="text-align:center;">Our Teachers</h2>
+<div class="teacher-container">
+<?php
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $imagePath = "uploads/" . htmlspecialchars($row['photo']);
+        echo "<div class='teacher-card'>
+                <img src='$imagePath' alt='Teacher Photo'>
+                <h3>" . htmlspecialchars($row['full_name']) . "</h3>
+                <p>" . htmlspecialchars($row['qualification']) . "</p>
+                <a href='teacher_profile.php?teacher_id=" . $row['teacher_id'] . "'>View Profile</a>
+              </div>";
     }
-  } else {
-    echo "<p>No teachers available at the moment.</p>";
-  }
-  $conn->close();
-  ?>
+} else {
+    echo "<p>No teachers available.</p>";
+}
+$conn->close();
+?>
 </div>
-
 </body>
 </html>
