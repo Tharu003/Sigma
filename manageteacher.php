@@ -63,13 +63,12 @@
       </thead>
       <tbody>
         <?php
-        // DB connection
+    
         $conn = new mysqli("localhost", "root", "", "sigma_db");
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
         }
 
-        // Query teachers table
         $result = $conn->query("SELECT * FROM teacher");
         if ($result) {
           while ($row = $result->fetch_assoc()) {

@@ -105,7 +105,7 @@
   <p>Home / Teachers / Add Teachers </p>
   <div class="card">
     
-   <form action="save_teacher.php" method="POST" id="teacherForm">
+   <form action="save_teacher.php" method="POST" id="teacherForm"enctype="multipart/form-data">
 
       <div class="form-group">
         <label for="teacherName">Name:</label>
