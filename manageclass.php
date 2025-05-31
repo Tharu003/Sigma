@@ -53,19 +53,21 @@
     <tr>
       <th>ID</th>
       <th>Grade</th>
-      <th>Actions</th>
+      <th>Teacher Name</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
    <?php
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 
-$result = $conn->query("SELECT * FROM class");
+$result = $conn->query("SELECT * FROM class_for_teacher");
 
 while ($row = $result->fetch_assoc()) {
     echo "<tr>
             <td>{$row['class_id']}</td>
             <td>{$row['grade']}</td>
+            <td>{$row['full_name']}</td>
             <td>
                 <a href='edit_class.php?class_id={$row['class_id']}' class='btn btn-sm btn-success'>Edit</a>
                 <a href='delete_class.php?class_id={$row['class_id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure you want to delete this class?')\">Delete</a>
