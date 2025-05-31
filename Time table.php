@@ -129,104 +129,116 @@
     <div class="card-container">
 
       <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <h2>Sinhala</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Suranjith Vithanage</p>
         <p><span class="label medium">🌐 Medium</span> Sinhala</p>
         <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+        <p><span class="label time">⏰ Time</span> 3.00 PM - 5:00 PM</p>
+        
       </div>
         <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-        <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-        <p><span class="label day">📅 Day</span> Monday</p>
-        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-      </div>
-
-      <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <h2>English</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Ranil Gunarathne</p>
         <p><span class="label medium">🌐 Medium</span> Sinhala</p>
         <p><span class="label day">📅 Day</span> Tuesday</p>
-        <p><span class="label time">⏰ Time</span> 3:00 PM - 8:00 PM</p>
-        <p class="note">SPECIAL GROUP CLASS (Sinhala/English Medium)</p>
+        <p><span class="label time">⏰ Time</span> 3.00 PM - 5:00 PM</p>
+        
       </div>
-
-      <div class="card">
-        <h2>Physics</h2>
-        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <div class="card">
+        <h2>ICT</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Thilina Nayanajith</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Wednesday</p>
+        <p><span class="label time">⏰ Time</span> 3:00 PM - 5:00 PM</p>
+        
+      </div>
+        <div class="card">
+        <h2>Business Studies</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Thushara</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Thursday</p>
+        <p><span class="label time">⏰ Time</span> 3:00 PM - 5:00 PM</p>
+        
+      </div>
+        <div class="card">
+        <h2>History</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Jagath Nilantha</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Friday</p>
+        <p><span class="label time">⏰ Time</span> 3:00 PM - 5:00 PM</p>
+       
+      </div>
+        <div class="card">
+        <h2>Dancing</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Shashika Jayawardhana</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Saturday</p>
+        <p><span class="label time">⏰ Time</span> 8:00 AM - 10:00 AM</p>
+       
+      </div>
+        <div class="card">
+        <h2>Mathematics</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Ravindu Maduranga</p>
         <p><span class="label medium">🌐 Medium</span> Sinhala</p>
         <p><span class="label day">📅 Day</span> Sunday</p>
-        <p><span class="label time">⏰ Time</span> 1:00 PM - 5:30 PM</p>
-        <p class="note">MASS (Permanent Time) Sinhala/English Medium</p>
+        <p><span class="label time">⏰ Time</span> 8:00 AM - 10:00 AM</p>
+        
+      </div>
+        <div class="card">
+        <h2>Science</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Suranga Piyumal</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Saturday</p>
+        <p><span class="label time">⏰ Time</span> 10:00 AM - 12:00 PM</p>
+        
       </div>
 
       <div class="card">
-        <h2>Science For Technology <span class="sub">2025-THEORY | PHYSICAL</span></h2>
+        <h2>Arts</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Maduranga</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Sunday</p>
+        <p><span class="label time">⏰ Time</span> 1:00 PM - 3:00 PM</p>
+        
+      </div>
+
+      <div class="card">
+        <h2>Music</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Nimal Mendis</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Saturday</p>
+        <p><span class="label time">⏰ Time</span> 1:00 PM - 3:00 PM</p>
+        
+      </div>
+
+      <div class="card">
+        <h2>Primary English</h2>
+        <p class="sub">2025 | PHYSICAL </p>
         <p><span class="label lecturer">👨‍🏫 Lecturer</span> Jeewan Balasooriya</p>
         <p><span class="label medium">🌐 Medium</span> Sinhala</p>
         <p><span class="label day">📅 Day</span> Sunday</p>
-        <p><span class="label time">⏰ Time</span> 1:00 PM - 4:00 PM</p>
+        <p><span class="label time">⏰ Time</span> 3:00 PM - 5:00 PM</p>
+        
+      </div>
+
+      <div class="card">
+        <h2>Schoolership</h2>
+        <p class="sub">2025 | PHYSICAL </p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> K.A.Sanjeewa</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Saturday</p>
+        <p><span class="label time">⏰ Time</span> 5:00 PM - 7:00 PM</p>
+        
       </div>
 
     </div>
