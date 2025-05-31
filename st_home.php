@@ -112,7 +112,7 @@
     <a href="st_dashboard.php"><i class="fas fa-home"></i> Dashboard</a>
     <a href="aboutus.php"><i class="fas fa-users"></i> About Us</a>
     <a href="teachers.php"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
-    <a href="timetable.php"><i class="fas fa-calendar-alt"></i> Time Table</a>
+    <a href="Time table.php"><i class="fas fa-calendar-alt"></i> Time Table</a>
     <a href="contactus.php"><i class="fas fa-envelope"></i> Contact Us</a>
     <a href="performance.php"><i class="fas fa-chart-line"></i> Performance</a>
     <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
