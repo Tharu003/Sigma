@@ -1,517 +1,363 @@
+<?php include"st_home.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGMA Institute</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<style>
-    /* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-
-
-/* Main Container Styles */
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Image Styles */
-.image-container {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.image-container img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Text Content Styles */
-.text-container {
-    flex: 2;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading Styles */
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #4B0082; /* Dark purple */
-}
-
-/* Paragraph Styles */
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #4B0082; /* Dark purple */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-/* /box/ */
-
-/* css */
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 50px;
-}
-
-.box {
-  width: 250px;
-  height: 250px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family: sans-serif;
-}
-
-.box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px darkorchid;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #4b0082;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    max-width: 50px;
-    margin-right: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-}
-
-.inception {
-    display: flex;
-    align-items: flex-start;
-}
-
-.image-container {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.image-container img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.text-content {
-    flex: 2;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f1f1f1;
-    margin-top: 20px;
-}
-
-
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Header Styles */
-header {
-    background-color: #4B0082; /* Dark purple */
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-}
-
-/* Logo */
-.logo {
-    width: 50px;
-    height: auto;
-}
-
-/* Main Container Styles */
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Image Styles */
-.image-container {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.image-container img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Text Content Styles */
-.text-container {
-    flex: 2;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading Styles */
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #4B0082; /* Dark purple */
-}
-
-/* Paragraph Styles */
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #4B0082; /* Dark purple */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-
-
-/icons/
-.social-icons a {
-    margin: 10px;
-    font-size: 24px;
-    color: black;
-    text-decoration: none;
-  }
-
-
-
-css
-.history-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to right, #2a1e73, #430c0c);
-  padding: 50px;
-  border-radius: 40px;
-  color: white;
-}
-
-/box .container/
-css
-.history-container {
-  background: linear-gradient(to right, #2a1e73, #430c0c);
-  padding: 40px;
-  border-radius: 30px;
-  margin: 40px;
-}
-
-.history-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  color: black;
-}
-
-.text-box {
-  width: 60%;
-}
-
-.image-box {
-  position: relative;
-  width: 35%;
-}
-
-.img1, .img2 {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-
-.img2 {
-  position: absolute;
-  top: 60px;
-  left: -40px;
-  width: 80%;
-}
-
-/box color/
- .history-section {
-      background: linear-gradient(to right, #1a1a40, #3f003f);
-      color: white;
-      padding: 40px;
-      border-radius: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 30px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA Institute</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .history-text {
-      width: 50%;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+      .main-content {
+      margin-left: 80px;
+      margin-top: 60px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+    .sidebar.active ~ .main-content {
+      margin-left: 250px;
     }
 
-    .history-images {
-      position: relative;
-      width: 40%;
+    h2, h3, h5 {
+      color: #4B0082;
     }
 
-    .img1 {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /facilities/
     .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.3);
+    }
+
+    .logo-box {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+      background-color: #4B0082;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-box:hover::after {
+      content: url('images/logo.png'); /* Replace with your logo path */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .social-icons a {
+      color: #4B0082;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .text-content p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .inception-card {
+  margin: 40px 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 50px;
 }
 
-.box {
-  width: 250px;
+.inception-box {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.inception-image {
+  flex: 1 1 350px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.inception-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inception-text {
+  flex: 2 1 600px;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.inception-text h2 {
+  color: #4B0082;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.inception-text p {
+  line-height: 1.7;
+  color: #333;
+  font-size: 16px;
+}
+.hover-reveal {
+  position: relative;
   height: 250px;
-  background-color: black;
-  color:white;
+  background-color:rgb(10, 14, 39);
+  border-radius: 12px;
+  color: white;
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 5px;
-  font-family: sans-serif;
-  
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
+.hover-reveal .card-front,
+.hover-reveal .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.hover-reveal .card-front {
+  z-index: 2;
+  font-size:50px;
+  font-family: Harlow Solid Italic;
+}
 
+.hover-reveal .card-back {
+  opacity: 0;
+  z-index: 1;
+  font-size: 20px;
+}
 
-</style>
+.hover-reveal:hover .card-front {
+  opacity: 0;
+}
+
+.hover-reveal:hover .card-back {
+  opacity: 1;
+}
+
+.hover-reveal img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.logo-card .card-back {
+  background-color: transparent; /* remove background */
+  padding: 0;
+}
+
+.logo-card .card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover if you want it fully filled */
+  border-radius: 12px;
+}
+.facilities-cards {
+  margin-top: 40px;
+}
+
+.facility-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(75, 0, 130, 0.3);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.facility-card h5 {
+  color: #4B0082;
+  margin: 15px 0 5px;
+  font-size: 18px;
+}
+
+.facility-card p {
+  font-size: 14px;
+  padding: 0 10px 15px;
+  color: #444;
+}
+.fac{
+    font-size: 30px;
+    text-align: center;
+}
+
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="sigma Logo">
-            <h1>SIGMA</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Teachers</a></li>
-                <li><a href="#">TimeTable</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#" class="active">sigma LMS</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="inception">
-            <div class="image-container">
-                <img src="download.jpeg" alt="sigma Institute Founder">
-            </div>
-            <div class="text-content">
-               
-                   
-                <h2>Inception of Sigma Institute</h2>
-                <p>
-                    My SIGMA institute was founded in 2015. As a result of the opportunities faced by the times,
-                    the SIGMA institute was created as a result of continuous dedication and courage.The main 
-                    objectives are to provide the best services for the education of children with maxium facilities
-                    and a better envitomen, with the participation of a group of talented teachers. I express my heartfelt
-                    gratitude to our staff and faculty who provide constant support to maintain the discipline of student 
-                    as number 1 in the institution and to provide better education as number 1 again.<br>
+    <div class="main-content" id="mainContent">
 
-                    If we have unintentionally offended you in this short journey with us. please forgive us. Point out our 
-                    shortcomings.Tell us your suggestions.<br><br>
+  <div class="container">
+  <section class="inception-card">
+  <div class="inception-box">
+    <div class="inception-image">
+      <img src="images/home.jpg" alt="Sigma Institute Founder">
+    </div>
+    <div class="inception-text">
+      <h2>Inception of Sigma Institute</h2>
+      <p>
+        My SIGMA institute was founded in 2015. As a result of the opportunities faced by the times,
+        the SIGMA institute was created as a result of continuous dedication and courage. The main 
+        objectives are to provide the best services for the education of children with maximum facilities
+        and a better environment, with the participation of a group of talented teachers. <br><br>
 
-                    thank you<br>
-                    I am Nishara.<br>
-                    Managing Director and Founder<br>
-                    Sigma Education Institute.<br>
-                
-                </p><br>
-                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                 </div>
+        I express my heartfelt gratitude to our staff and faculty who provide constant support to maintain
+        discipline and excellence, ensuring Sigma is number one in student development.<br><br>
+
+        If we have unintentionally offended you in this short journey with us, please forgive us. Point out our 
+        shortcomings. Tell us your suggestions.<br><br>
+
+        Thank you,<br>
+        <strong>I am Nishara</strong><br>
+        Managing Director and Founder<br>
+        Sigma Education Institute.
+      </p>
+    </div>
+  </div>
+</section>
 
 
-               
-
-                  
-
-                  <div class="container">
-                    <div class="box"><u><h3>OUR LOGO</u></div>
-                    <div class="box"><h3><u>OUR MISSION</u></h3> create a generation of well-disciplined and<br> good people in every field through a <br> and up-to-date practical education..</div>
-                    <div class="box"><h3><u>OUR VISION</u></h3><br> goo  d and intelligent society</div>
-                  </div>
-
-
-                  <div class="history-container">
-                  <div class="history-section">
-                    <div class="text-box">
-                      <h2>Great History Of Our Institute</h2>
-                      <p>2015, the esteemed Nishara had a vision to create an institution that 
-                        would provide unparalleled education to the youth of Sri Lanka. With the guidance and
-                        naming by the revered scholar (Mothers name), Sigma Institute was bom. From its inception, 
-                        Sigma Institute set out to be more than just a place of learning-it aimed to be a beacon of 
-                         hope and opportunity for students across the nation. Over the past 10 years, Sigma Institute has 
-                         grown into a well-known and respected educational institution, recognized for its dedication to 
-                         quality education and student success. Our growth is driven by a team of over 30 of the country's 
-                         most talented and experienced teachers, each bringing their unique expertise and passion to the classroom. 
-                         Their commitment ensures that our students receive a holistic education that prepares them for the
-                          challenges of the future.  <b>SHOW MORE</b></p>
-                    </div>
-                    <div class="image-box">
-                      <img src="download (1).jpeg" class="img1">
-                      <img src="download.jpeg" class="img2">
-                    </div>
-                  </div>
-
-                  <div class="container">
-                 <div class="box"><h5><u>CCTV Surveillance</u></h5><br><h6> CCTV cameras monitor all activities.
-                     Outsiders are not allowed, ensuring a safe, secure space for
-                      children to learn freely and confidently..</h6></div>
-
-                 <div class="box"><h5><u>Medical and hygiene facilities available</u></h5>
-                   <h6> The institution provides clean cafeterias, sanitary facilities, 
-                    and first aid, so children stay safely inside without needing
-                     to leave the premises..</h6></div>
-
-                 <div class="box"><h5><u>Trusted, experienced, renowned teaching staff.</u></h5>
-                    <h6> The institute has experienced, well-known teachers islandwide,
-                      giving both parents and students full confidence in the teaching
-                       and learning process. .</h6></div>
-
-                 <div class="box"><h5><u>Strict access and emergency safety measures.</u></h5>
-                    <h6>Students cannot leave before class ends. In emergencies like a fire,
-                     they may leave only with teacher permission or a call home, ensuring 
-                     safe, uninterrupted learning..</h6></div>
-
-                 <div class="box"><h5><u>A/C lecture halls</u></h5><br>
-                    <h6>Our institute provides A/C 
-                    lecture halls to ensure a cool, comfortable environment for students,
-                     helping them focus better and enjoy a pleasant, distraction-free 
-                     learning experience throughout the day.</h6> </div>
+   <section class="card-grid">
+  <!-- LOGO -->
+ <div class="box hover-reveal logo-card">
+  <div class="card-front">OUR LOGO</div>
+  <div class="card-back">
+    <img src="images/logo1.png" alt="Logo Fullscreen">
+  </div>
+</div>
 
 
-                  
+  <!-- MISSION -->
+  <div class="box hover-reveal">
+    <div class="card-front">OUR MISSION</div>
+    <div class="card-back">
+      <p>Create a generation of well-disciplined and good people through practical education.</p>
+    </div>
+  </div>
 
-
-                  
-
-
-                 
-
-  
-                   
-                
-                
-            </div>
-        </section>
-    </main>
-
-    
-
-    
-    
-    <footer>
-        <p>© 2025 SIGMA Institute. All Rights Reserved.</p>
-    </footer>
+  <!-- VISION -->
+  <div class="box hover-reveal">
+    <div class="card-front">OUR VISION</div>
+    <div class="card-back">
+      <p>To build a good and intelligent society.</p>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<div class="fac">
+<h1>Our Facilities</h1></div>
+   <br>
+   <br>
+<section class="card-grid facilities-cards">
+  <div class="facility-card">
+    <img src="images/cctv.jpg" alt="CCTV Surveillance">
+    <h5>CCTV Surveillance</h5>
+    <p>Monitored security ensuring a safe learning space.</p>
+  </div>
+ 
+  <div class="facility-card">
+    <img src="images/teachers.jpg" alt="Expert Teachers">
+    <h5>Expert Teachers</h5>
+    <p>Experienced faculty delivering quality education with care.</p>
+  </div>
+  <div class="facility-card">
+    <img src="images/room.jpg" alt="Emergency Measures">
+    <h5>Emergency Measures</h5>
+    <p>Strict access rules with safe evacuation protocols.</p>
+  </div>
+  <div class="facility-card">
+    <img src="images/room.jpg" alt="A/C Lecture Halls">
+    <h5>A/C Lecture Halls</h5>
+    <p>Comfortable, cool classrooms that enhance learning focus.</p>
+  </div>
+   <div class="facility-card">
+    <img src="images/teachers.jpg" alt="Expert Teachers">
+    <h5>Expert Teachers</h5>
+    <p>Experienced faculty delivering quality education with care.</p>
+  </div>
+   <div class="facility-card">
+    <img src="images/teachers.jpg" alt="Expert Teachers">
+    <h5>Expert Teachers</h5>
+    <p>Experienced faculty delivering quality education with care.</p>
+  </div>
+</section>
+ 
 </body>
 </html>
