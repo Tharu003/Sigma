@@ -107,7 +107,7 @@
       background-color: rgb(3, 3, 29);
       color: #ffffff;
       text-align: center;
-      padding: 30px 20px;
+      padding: 30px 30px;
       font-size: 16px;
       margin-top: 60px;
     }
