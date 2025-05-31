@@ -1,3 +1,5 @@
+<?php include"st_home.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +12,16 @@
   padding: 20px;
   flex-wrap: wrap;
 }
+.main-content {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.active ~ .main-content {
+    margin-left: 250px;
+    }
 
 .card {
   background: #f8fffd;
@@ -96,7 +108,7 @@
   </style>
 </head>
 <body>
-
+ <div class="main-content" id="mainContent">
  [3:36 PM, 5/31/2025] ChatGPT: <div class="card-container">
   <!-- Card 1 -->
   <div class="card">
