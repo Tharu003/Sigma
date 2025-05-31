@@ -67,7 +67,7 @@
     }
 
     .sidebar {
-      background: #f8f9fa;
+      background:rgb(255, 255, 255);
       position: fixed;
       top: 0;
       left: -250px;
