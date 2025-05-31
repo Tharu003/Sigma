@@ -243,16 +243,7 @@
 
     </div>
 
-    <div class="pagination">
-      <a href="#">‹</a>
-      <a href="#">1</a>
-      <span>…</span>
-      <a href="#">41</a>
-      <a href="#">42</a>
-      <a href="#" class="active">43</a>
-      <a href="#">›</a>
-    </div>
-  </div>
+  
  <footer>
     <div class="footer-links mb-2">
       <a href="index.php">Home</a> |
