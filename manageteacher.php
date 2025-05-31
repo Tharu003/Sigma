@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Manage Teachers</title>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css" />
@@ -40,6 +40,12 @@
       color: rgb(22, 8, 87);
       margin-bottom: 10px;
     }
+    img.teacher-photo {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
@@ -52,6 +58,7 @@
     <table id="teacherTable" class="display nowrap" style="width:100%">
       <thead>
         <tr>
+          <th>Photo</th>
           <th>ID</th>
           <th>Full Name</th>
           <th>Address</th>
@@ -63,7 +70,7 @@
       </thead>
       <tbody>
         <?php
-    
+      
         $conn = new mysqli("localhost", "root", "", "sigma_db");
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
@@ -72,7 +79,9 @@
         $result = $conn->query("SELECT * FROM teacher");
         if ($result) {
           while ($row = $result->fetch_assoc()) {
+            $photoPath = !empty($row['photo']) ? "uploads/{$row['photo']}" : "default.png";
             echo "<tr>
+              <td><img src='$photoPath' class='teacher-photo' alt='Photo'></td>
               <td>{$row['teacher_id']}</td>
               <td>{$row['full_name']}</td>
               <td>{$row['address']}</td>
@@ -80,14 +89,13 @@
               <td>{$row['contact_no']}</td>
               <td>{$row['email']}</td>
               <td>
-            <a href='edit_teacher.php?teacher_id={$row['teacher_id']}' class='btn btn-sm btn-success'>Edit</a>
-                    <a href='delete_teacher.php?teacher_id={$row['teacher_id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure?')\">Delete</a>
-                </td>
+                <a href='edit_teacher.php?teacher_id={$row['teacher_id']}' class='btn btn-sm btn-success'>Edit</a>
+                <a href='delete_teacher.php?teacher_id={$row['teacher_id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure?')\">Delete</a>
               </td>
             </tr>";
           }
         } else {
-          echo "<tr><td colspan='7'>No teachers found.</td></tr>";
+          echo "<tr><td colspan='8'>No teachers found.</td></tr>";
         }
         $conn->close();
         ?>
@@ -99,12 +107,7 @@
 <script>
   $(document).ready(function () {
     $('#teacherTable').DataTable({
-      dom: 'Plfrtip',
-      searchPanes: {
-        cascadePanes: true,
-        viewTotal: true
-      },
-      responsive: true,
+      responsive: true
     });
   });
 </script>

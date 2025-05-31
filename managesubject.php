@@ -58,13 +58,12 @@
       </thead>
       <tbody>
         <?php
-        // DB connection
+     
         $conn = new mysqli("localhost", "root", "", "sigma_db");
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
         }
 
-        // Query subject data
         $result = $conn->query("SELECT * FROM subject");
 
         if ($result->num_rows > 0) {

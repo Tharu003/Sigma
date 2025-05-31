@@ -142,6 +142,10 @@
         <input type="text" id="teacherQualification" name="teacherQualification" required>
       </div>
       <br>
+      <div class="form-group">
+  <label for="teacherPhoto">Upload Photo:</label>
+  <input type="file" id="teacherPhoto" name="teacherPhoto" accept="image/*" required>
+</div>
       <br>
       <div class="button-group">
         <button type="submit" class="submit-btn">Submit</button>

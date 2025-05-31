@@ -94,7 +94,7 @@
     </div>
   </div>
 
-  <!-- Footer Section -->
+
   <div class="footer text-center">
     <div class="container">
       <p><strong>Sigma@gmail.com</strong> </p>

@@ -1,10 +1,15 @@
-<?php include "ad_home.php"; ?>
+<?php
+include "db.php"; 
+include "ad_home.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>add class</title>
+  <title>Add Class</title>
   <style>
+  
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
@@ -16,9 +21,6 @@
         padding: 20px;
         transition: margin-left 0.3s ease;
     }
-.sidebar.active ~ .main-content {
-        margin-left: 250px;
-    }
     .main-content h2{
       font-size: 30px;
       margin-left:auto;
@@ -26,73 +28,53 @@
     }
     .card {
       background-color:rgb(255, 255, 255);
-      max-width: auto;
-      height:auto;
+      max-width: 500px;
       margin: auto;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: px 8px 8px 8px rgba(189, 182, 182, 0.1);
+      box-shadow: 0 8px 8px rgba(189, 182, 182, 0.1);
     }
-
-    .card h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
     .form-group {
       margin-bottom: 15px;
     }
-
     .form-group label {
       display: block;
       margin-bottom: 5px;
-   
     }
-
-   .form-group input {
-  width: 100%;
-  padding: 6px 10px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  background-color: rgb(235, 226, 237);
-  outline: none;
-  border: 1px solid #ccc; 
-  box-shadow: none;  
-  height:40px;    
-}
-
-.form-group input:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: rgb(91, 174, 243);
-}
-
-
-   .button-group {
-  display: flex;
-  justify-content: left;
-  gap: 15px;             
-  margin-top: 20px;
-}
-
-.button-group button {
-  width: 100px;           
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.submit-btn {
-  background-color: rgb(7, 125, 13);
-}
-
-.clear-btn {
-  background-color: rgb(239, 16, 31);
-}
-
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      background-color: rgb(235, 226, 237);
+      height: 40px;
+      box-sizing: border-box;
+      outline: none;
+    }
+    select:focus, input[type="text"]:focus {
+      border-color: rgb(91, 174, 243);
+    }
+    .button-group {
+      display: flex;
+      justify-content: left;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .button-group button {
+      width: 100px;
+      padding: 8px;
+      font-size: 14px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+    }
+    .submit-btn {
+      background-color: rgb(7, 125, 13);
+    }
+    .clear-btn {
+      background-color: rgb(239, 16, 31);
+    }
     .button-group button:hover {
       opacity: 0.9;
     }
@@ -100,25 +82,39 @@
 </head>
 <body>
 
- <div class="main-content" id="mainContent">
+<div class="main-content" id="mainContent">
   <h2>Add Classes</h2>
-  <p>Home / Classes / Add Classes </p>
+  <p>Home / Classes / Class For Teacher </p>
   <div class="card">
     
-   <form action="save_class.php" method="POST">
+    <form action="save_class.php" method="POST">
 
       <div class="form-group">
-        <label for="classid">Class Id:</label>
-        <input type="text" id="classid" name="classid" required>
-      </div>
-      <br>
-      <div class="form-group">
         <label for="grade">Grade:</label>
-        <input type="text" id="grade" name="grade" required>
+        <select name="grade" id="grade" required>
+          <option value="">-- Select Grade --</option>
+          <?php
+            $grades = mysqli_query($conn, "SELECT DISTINCT grade FROM class");
+            while($grade_row = mysqli_fetch_assoc($grades)) {
+                echo "<option value='" . htmlspecialchars($grade_row['grade']) . "'>" . htmlspecialchars($grade_row['grade']) . "</option>";
+            }
+          ?>
+        </select>
       </div>
-      <br>
-      <br>
-      <br>
+
+      <div class="form-group">
+        <label for="teacher_id">Teacher Name:</label>
+        <select name="teacher_id" id="teacher_id" required>
+          <option value="">-- Select Teacher --</option>
+          <?php
+            $teachers = mysqli_query($conn, "SELECT teacher_id, full_name FROM teacher");
+            while($teacher_row = mysqli_fetch_assoc($teachers)) {
+                echo "<option value='" . $teacher_row['teacher_id'] . "'>" . htmlspecialchars($teacher_row['full_name']) . "</option>";
+            }
+          ?>
+        </select>
+      </div>
+
       <div class="button-group">
         <button type="submit" class="submit-btn">Submit</button>
         <button type="reset" class="clear-btn">Clear</button>
