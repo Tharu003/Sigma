@@ -1,193 +1,229 @@
-<?php include"st_home.php";
-?>
+<?php include "st_home.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Time Table</title>
   <style>
-    .card-container {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-.main-content {
-        margin-left: 0;
-        margin-top: 60px;
-        padding: 20px;
-        transition: margin-left 0.3s ease;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content {
+      margin-left: 0;
+      margin-top: 60px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
     }
 
     .sidebar.active ~ .main-content {
-    margin-left: 250px;
+      margin-left: 250px;
     }
 
-.card {
-  background: #f8fffd;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  width: 300px;
-  font-family: Arial, sans-serif;
-}
+    .card-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-.sub {
-  font-weight: bold;
-  color: #555;
-}
+    .card {
+      background: #f8fffd;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 350px;      /* Card width */
+      min-height: 250px; /* Minimum height */
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
 
-.label {
-  font-weight: bold;
-  display: inline-block;
-  width: 100px;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
 
-.lecturer { color: #3f51b5; }
-.medium   { color: #009688; }
-.day      { color: #9c27b0; }
-.time     { color: #f9a825; }
+    .card h2 {
+      margin: 0 0 15px 0;
+      color: #162057;
+    }
 
-.note {
-  margin-top: 10px;
-  color: red;
-  font-weight: bold;
-}
-[3:53 PM, 5/31/2025] ChatGPT: .card {
-  width: 400px;
-  background: #f1fdfb;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: auto;
-  font-family: Arial, sans-serif;
-  text-align: left;
-}
+    .sub {
+      font-size: 14px;
+      color: #666;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
 
-.card h2 {
-  margin: 0 0 15px;
-}
+    .label {
+      font-weight: bold;
+      display: inline-block;
+      width: 120px;
+    }
 
-.sub {
-  font-size: 14px;
-  color: #666;
-  font-weight: normal;
-}
+    .lecturer { color: #3f51b5; }
+    .medium   { color: #009688; }
+    .day      { color: #9c27b0; }
+    .time     { color: #f9a825; }
 
-.label {
-  font-weight: bold;
-  display: inline-block;
-  width: 120px;
-}
+    .note {
+      margin-top: 10px;
+      color: red;
+      font-weight: bold;
+    }
 
-.lecturer { color: #3f51b5; }
-.medium   { color: #009688; }
-.day      { color: #9c27b0; }
-.time     { color: #f9a825; }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 20px;
+      padding-bottom: 40px;
+    }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 20px;
-}
-[3:53 PM, 5/31/2025] ChatGPT: .pagination a, .pagination span {
-  padding: 8px 12px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #333;
-}
+    .pagination a, .pagination span {
+      padding: 8px 12px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+      user-select: none;
+    }
 
-.pagination .active {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-}
+    .pagination .active {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+      cursor: default;
+    }
+
   </style>
 </head>
 <body>
- <div class="main-content" id="mainContent">
- [3:36 PM, 5/31/2025] ChatGPT: <div class="card-container">
-  <!-- Card 1 -->
-  <div class="card">
-    <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-    <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Monday</p>
-    <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-    <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+
+  <div class="main-content" id="mainContent">
+    <div class="card-container">
+
+      <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+        <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Monday</p>
+        <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
+        <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
+      </div>
+
+      <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Tuesday</p>
+        <p><span class="label time">⏰ Time</span> 3:00 PM - 8:00 PM</p>
+        <p class="note">SPECIAL GROUP CLASS (Sinhala/English Medium)</p>
+      </div>
+
+      <div class="card">
+        <h2>Physics</h2>
+        <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Sunday</p>
+        <p><span class="label time">⏰ Time</span> 1:00 PM - 5:30 PM</p>
+        <p class="note">MASS (Permanent Time) Sinhala/English Medium</p>
+      </div>
+
+      <div class="card">
+        <h2>Science For Technology <span class="sub">2025-THEORY | PHYSICAL</span></h2>
+        <p><span class="label lecturer">👨‍🏫 Lecturer</span> Jeewan Balasooriya</p>
+        <p><span class="label medium">🌐 Medium</span> Sinhala</p>
+        <p><span class="label day">📅 Day</span> Sunday</p>
+        <p><span class="label time">⏰ Time</span> 1:00 PM - 4:00 PM</p>
+      </div>
+
+    </div>
+
+    <div class="pagination">
+      <a href="#">‹</a>
+      <a href="#">1</a>
+      <span>…</span>
+      <a href="#">41</a>
+      <a href="#">42</a>
+      <a href="#" class="active">43</a>
+      <a href="#">›</a>
+    </div>
   </div>
-
-  <!-- Card 2 -->
-  <div class="card">
-    <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-    <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Tuesday</p>
-    <p><span class="label time">⏰ Time</span> 3:00 PM - 8:00 PM</p>
-    <p class="note">SPECIAL GROUP CLASS (Sinhala/English Medium)</p>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="card">
-    <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-[3:36 PM, 5/31/2025] ChatGPT: <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Sunday</p>
-    <p><span class="label time">⏰ Time</span> 1:00 PM - 5:30 PM</p>
-    <p class="note">MASS (Permanent Time) Sinhala/English Medium</p>
-     <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-    <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Monday</p>
-    <p><span class="label time">⏰ Time</span> 7:00 AM - 12:00 PM</p>
-    <p class="note">MASS (Temporary Time) Sinhala/English Medium</p>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="card">
-    <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-    <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Tuesday</p>
-    <p><span class="label time">⏰ Time</span> 3:00 PM - 8:00 PM</p>
-    <p class="note">SPECIAL GROUP CLASS (Sinhala/English Medium)</p>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="card">
-    <h2>Physics</h2>
-    <p class="sub">2027-THEORY | PHYSICAL & ONLINE</p>
-    <p><span class="label lecturer">👨‍🏫 Lecturer</span> Amith Pussella</p>
-[3:36 PM, 5/31/2025] ChatGPT: <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-    <p><span class="label day">📅 Day</span> Sunday</p>
-    <p><span class="label time">⏰ Time</span> 1:00 PM - 5:30 PM</p>
-    <p class="note">MASS (Permanent Time) Sinhala/English Medium</p>
-     <h2>Science For Technology <span class="sub">2025-THEORY | PHYSICAL</span></h2>
-  <p><span class="label lecturer">👨‍🏫 Lecturer</span> Jeewan Balasooriya</p>
-  <p><span class="label medium">🌐 Medium</span> Sinhala</p>
-  <p><span class="label day">📅 Day</span> Sunday</p>
-  <p><span class="label time">⏰ Time</span> 1:00 PM - 4:00 PM</p>
-</div>
-
-<div class="pagination">
-  <a href="#">‹</a>
-  <a href="#">1</a>
-  <span>…</span>
-  <a href="#">41</a>
-  <a href="#">42</a>
-  <a href="#" class="active">43</a>
-  <a href="#">›</a>
-  </div>
-</div>
-
 
 </body>
 </html>
