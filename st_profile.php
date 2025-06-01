@@ -112,7 +112,7 @@ $enrollments = $stmt->get_result();
       </tbody>
     </table>
 
-    <a href="edit_student_profile.php" class="btn btn-primary mt-3">Edit Profile</a>
+    <a href="edit_st_profile.php" class="btn btn-primary mt-3">Edit Profile</a>
   </div>
 </div>
 
