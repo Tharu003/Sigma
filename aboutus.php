@@ -329,33 +329,45 @@
   <div class="facility-card">
     <img src="images/cctv.jpg" alt="CCTV Surveillance">
     <h5>CCTV Surveillance</h5>
-    <p>Monitored security ensuring a safe learning space.</p>
+    <p> CCTV cameras monitor all activities.
+    Outsiders are not allowed, ensuring a safe, secure space for
+   children to learn freely and confidently.</p>
   </div>
  
   <div class="facility-card">
-    <img src="images/teachers.jpg" alt="Expert Teachers">
+    <img src="images/teachers.jpg" alt="Trusted, experienced, renowned teaching staff">
     <h5>Expert Teachers</h5>
-    <p>Experienced faculty delivering quality education with care.</p>
+    <p>The institute has experienced, well-known teachers islandwide,
+   giving both parents and students full confidence in the teaching
+  and learning process..</p>
   </div>
   <div class="facility-card">
-    <img src="images/room.jpg" alt="Emergency Measures">
+    <img src="images/emegency.jpg" alt="Strict access and emergency safety measures">
     <h5>Emergency Measures</h5>
-    <p>Strict access rules with safe evacuation protocols.</p>
+    <p>Students cannot leave before class ends. In emergencies like a fire,
+   they may leave only with teacher permission or a call home, ensuring 
+   safe, uninterrupted learning..</p>
   </div>
   <div class="facility-card">
-    <img src="images/room.jpg" alt="A/C Lecture Halls">
+    <img src="images/room3.jpg" alt="A/C Lecture Halls">
     <h5>A/C Lecture Halls</h5>
-    <p>Comfortable, cool classrooms that enhance learning focus.</p>
+    <p>Our institute provides A/C 
+    lecture halls to ensure a cool, comfortable environment for students,
+    helping them focus better and enjoy a pleasant, distraction-free 
+    learning experience throughout the day.</p>
   </div>
    <div class="facility-card">
-    <img src="images/teachers.jpg" alt="Expert Teachers">
-    <h5>Expert Teachers</h5>
-    <p>Experienced faculty delivering quality education with care.</p>
+    <img src="images/medical7.jpg" alt="Medical and hygiene facilities available">
+    <h5>Medical and hygiene facilities available</h5>
+    <p>The institution provides clean cafeterias, sanitary facilities, 
+    and first aid, so children stay safely inside without needing
+    to leave the premises..</p>
   </div>
    <div class="facility-card">
-    <img src="images/teachers.jpg" alt="Expert Teachers">
-    <h5>Expert Teachers</h5>
-    <p>Experienced faculty delivering quality education with care.</p>
+    <img src="images/project.jpg" alt="Expert Teachers">
+    <h5>Projector and multimedia</h5>
+    <p>Projector and multimedia equipment help make visual and audio 
+      learning activities clearer and more effective..</p>
   </div>
 </section>
  
