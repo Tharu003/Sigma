@@ -1,8 +1,8 @@
 <?php
 session_start();
-include 'db.php';
+include 'dbase.php';
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['email'], $_POST['password'])) {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -11,7 +11,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-       
         if ($password === $user['password']) {
             if ($user['status'] === 'approved') {
                 $_SESSION['user_id'] = $user['id'];
@@ -21,21 +20,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 if ($user['role'] === 'student') {
                     header("Location: st_dashboard.php");
                 } elseif ($user['role'] === 'teacher') {
-                    header("Location: ad_home.php");
+                    header("Location: ad_dashboard.php");
                 } else {
                     echo "Unknown user role.";
                 }
-                exit();
+                exit;
             } else {
-                echo "Your account is not approved yet.";
+                echo "⛔ Your account is not approved yet.";
             }
         } else {
-            echo "Incorrect password.";
+            echo "❌ Incorrect password.";
         }
     } else {
-        echo "Email not found.";
+        echo "❌ Email not found.";
     }
 } else {
-    echo "Please enter both email and password.";
+    echo "Please fill in all fields.";
 }
 ?>

@@ -1,8 +1,12 @@
 <?php
-try {
-    $bdd = new PDO("mysql:host=localhost;dbname=sigma_db;charset=utf8", "root", "");
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-    die("Connection error: " . $e->getMessage());
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$dbname = 'sigma_db';
+
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>

@@ -1,34 +1,38 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "sigma_db";
-
-$conn = new mysqli($host, $user, $pass, $db);
+session_start();
+include 'dbase.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['full_name'];
+    $full_name = $_POST['full_name'];
     $address = $_POST['address'];
     $dob = $_POST['dob'];
-    $whatsapp = $_POST['whatsapp_no'];
-    $guardian = $_POST['guardian_name'];
+    $whatsapp_no = $_POST['whatsapp_no'];
+    $guardian_name = $_POST['guardian_name'];
     $guardian_contact = $_POST['guardian_contact'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $role = isset($_POST['role']) ? $_POST['role'] : 'student'; 
+    $status = 'pending'; 
+    $admission_date = date("Y-m-d"); 
 
-    $stmt = $conn->prepare("INSERT INTO student (full_name, address, dob, whatsapp_no, guardian_name, guardian_contact, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssssss", $name, $address, $dob, $whatsapp, $guardian, $guardian_contact, $email, $password);
+    try {
+       
+        $stmt1 = $bdd->prepare("INSERT INTO users (name, email, password, role, status) VALUES (?, ?, ?, ?, ?)");
+        $stmt1->execute([$full_name, $email, $password, $role, $status]);
 
- if ($stmt->execute()) {
-    echo "Data inserted successfully.";
+        $stmt2 = $bdd->prepare("INSERT INTO student (full_name, address, dob, whatsapp_no, guardian_name, guardian_contact, email, password, admission_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt2->execute([$full_name, $address, $dob, $whatsapp_no, $guardian_name, $guardian_contact, $email, $password, $admission_date]);
 
-    header("Location: st_dashboard.php"); 
-   
-
-    } else {
-        echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
+       
+        echo '<script>
+            alert("Registration successful. Awaiting admin approval.");
+             window.location.href = "student_reg.php";
+        </script>';
+    } catch (PDOException $e) {
+    
+        echo '<script>
+            alert("Error: ' . $e->getMessage() . '");
+        </script>';
     }
-
-
 }
 ?>

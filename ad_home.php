@@ -168,13 +168,7 @@
         </ul>
       </li>
 
-      <li class="dropdown">
-        <button class="dropdown-btn"><i class="fas fa-school"></i> Classes <i class="fas fa-chevron-down"></i></button>
-        <ul class="submenu">
-          <li><a href="addclass.php"><i class="fas fa-plus-square"></i> Add Classes</a></li>
-          <li><a href="manageclass.php"><i class="fas fa-cogs"></i> Manage Classes</a></li>
-        </ul>
-      </li>
+       <li><a href="check.php"><i class="fas fa-user-circle"></i> Assign Schedule</a></li>
 
       <li class="dropdown">
         <button class="dropdown-btn"><i class="fas fa-book"></i> Subjects <i class="fas fa-chevron-down"></i></button>
@@ -193,6 +187,7 @@
       </li>
 
       <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
+       <li><a href="admin_approval.php"><i class="fas fa-user-circle"></i> Approved Students</a></li>
       <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
     </ul>
   </div>

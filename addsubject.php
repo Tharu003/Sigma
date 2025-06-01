@@ -99,8 +99,10 @@
   </style>
 </head>
 <body>
-  
+    
  <div class="main-content" id="mainContent">
+  <form method="POST" action="save_sub.php">
+
   <h2>Add Subject</h2>
   <p>Home / Subjects / Add Subject </p>
   <div class="card">
