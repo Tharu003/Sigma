@@ -100,52 +100,60 @@
         <form method="post" action="student_save.php" id="form">
           <div class="form-group">
             <label>Full Name</label>
-            <input type="text" class="form-control" name="full_name"id="hname" placeholder="Enter full name">
+            <input type="text" class="form-control" name="full_name" placeholder="Enter full name">
           </div>
 
           <div class="form-group">
             <label>Address</label>
-            <input type="text" class="form-control" name="address"id="hadd" placeholder="Enter address">
+            <input type="text" class="form-control" name="address" placeholder="Enter address">
           </div>
 
           <div class="form-group">
             <label>Date of Birth</label>
-            <input type="date" class="form-control"name="dob"  id="hdob">
+            <input type="date" class="form-control" name="dob">
           </div>
 
           <div class="form-group">
             <label>Whatsapp Number</label>
-            <input type="tel" class="form-control" id="htel"name="whatsapp_no" placeholder="Enter phone number">
+            <input type="tel" class="form-control" name="whatsapp_no" placeholder="Enter phone number">
           </div>
 
           <div class="form-group">
             <label>Guardian's Name</label>
-            <input type="text" class="form-control"name="guardian_name" id="hgn" placeholder="Enter guardian's name">
+            <input type="text" class="form-control" name="guardian_name" placeholder="Enter guardian's name">
           </div>
 
           <div class="form-group">
             <label>Guardian's Contact Number</label>
-            <input type="tel" class="form-control"name="guardian_contact" id="hgpn" placeholder="Enter guardian's phone number">
+            <input type="tel" class="form-control" name="guardian_contact" placeholder="Enter guardian's phone number">
           </div>
 
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" class="form-control"name="email" id="hemail" placeholder="Enter Email Address">
+            <input type="email" class="form-control" name="email" placeholder="Enter Email Address">
           </div>
 
           <div class="form-group">
             <label>Password</label>
-            <input type="text" class="form-control"name="password" id="pword" placeholder="Enter Your Password">
+            <input type="text" class="form-control" name="password" placeholder="Enter Your Password">
           </div>
+
+        <div class="form-group">
+  <label>Registering As:</label><br>
+  <input type="radio" name="role" value="student" checked> Student
+  <input type="radio" name="role" value="teacher"> Teacher
+</div>
+
 
           <div class="text-center mt-4">
-            <button type="submit" class="btn btn-secondary px-4" >Submit</button>
-          </div>
-
-          <div class="text-center mt-3">
-            <a href="login.php">Back to Login</a>
+            <button type="submit" class="btn btn-secondary px-4">Submit</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         
 </body>

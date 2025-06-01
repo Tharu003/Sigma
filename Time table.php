@@ -103,23 +103,56 @@
       border-color: #007bff;
       cursor: default;
     }
-      footer {
-      background-color: rgb(3, 3, 29);
-      color: #ffffff;
-      text-align: center;
-      padding: 30px 30px;
-      font-size: 16px;
-      margin-top: 60px;
-    }
-    footer .footer-links a {
-      color: #ffffff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    footer .footer-links a:hover {
-      text-decoration: underline;
-    }
+  .footer {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.footer p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #888;
+}
 
   </style>
 </head>
@@ -244,14 +277,27 @@
     </div>
 
   
- <footer>
-    <div class="footer-links mb-2">
-      <a href="index.php">Home</a> |
-      <a href="about.php">About</a> |
-      <a href="contact.php">Contact</a> |
-      <a href="privacy.php">Privacy</a>
+ <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3>Sigma Institute</h3>
+      <p>ඉගෙනීම වෙනස් කරන්න අපිත් සමඟ</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
-    <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
-  </footer>
+    <div class="footer-bottom">
+      <p>© 2025 Sigma Institute. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </body>
 </html>
