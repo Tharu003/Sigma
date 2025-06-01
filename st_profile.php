@@ -10,34 +10,37 @@ if ($conn->connect_error) {
 
 
 $student_id = $_SESSION['student_id'] ?? null;
-
 if (!$student_id) {
   echo "<p>You must be logged in to view this page.</p>";
   exit;
 }
 
 
-$student_sql = "SELECT * FROM student WHERE student_id = ?";
+$student_sql = "SELECT * FROM Student WHERE st_id = ?";
 $stmt = $conn->prepare($student_sql);
 $stmt->bind_param("i", $student_id);
 $stmt->execute();
 $student_result = $stmt->get_result();
 $student = $student_result->fetch_assoc();
 
+if (!$student) {
+  echo "<p>Student not found.</p>";
+  exit;
+}
+
 
 $enroll_sql = "
-  SELECT s.subject_name, c.class_name
-  FROM student_subject ss
-  JOIN subject s ON ss.subject_id = s.subject_id
-  LEFT JOIN class_subject cs ON s.subject_id = cs.subject_id
-  LEFT JOIN class c ON cs.class_id = c.class_id
-  WHERE ss.student_id = ?
+  SELECT s.name AS subject_name, c.name AS class_name
+  FROM St_select_sub ss
+  JOIN Subject s ON ss.subject_id = s.subject_id
+  LEFT JOIN Subject_For_Class sc ON s.subject_id = sc.subject_id
+  LEFT JOIN Class c ON sc.class_id = c.class_id
+  WHERE ss.st_id = ?
 ";
 $stmt = $conn->prepare($enroll_sql);
 $stmt->bind_param("i", $student_id);
 $stmt->execute();
 $enrollments = $stmt->get_result();
-
 ?>
 
 <!DOCTYPE html>
@@ -75,11 +78,13 @@ $enrollments = $stmt->get_result();
 
 <div class="container mt-5">
   <div class="profile-card text-center">
-    <img src="<?= $student['profile_pic'] ?? 'default-profile.png' ?>" alt="Profile Picture" class="profile-pic">
+    <img src="<?= isset($student['profile_pic']) ? 'uploads/' . htmlspecialchars($student['profile_pic']) : 'uploads/default-profile.png' ?>" alt="Profile Picture" class="profile-pic">
     <h2><?= htmlspecialchars($student['full_name']) ?></h2>
     <p><strong>Email:</strong> <?= htmlspecialchars($student['email']) ?></p>
-    <p><strong>Contact:</strong> <?= htmlspecialchars($student['contact_no']) ?></p>
+    <p><strong>WhatsApp:</strong> <?= htmlspecialchars($student['whatsapp_no']) ?></p>
     <p><strong>Address:</strong> <?= htmlspecialchars($student['address']) ?></p>
+    <p><strong>Date of Birth:</strong> <?= htmlspecialchars($student['dob']) ?></p>
+    <p><strong>Guardian:</strong> <?= htmlspecialchars($student['guardian_name']) ?> (<?= htmlspecialchars($student['guardian_contact']) ?>)</p>
 
     <hr>
 
