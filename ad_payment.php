@@ -51,9 +51,9 @@ include "ad_home.php";
         $result = $conn->query($query);
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
-                    <td>{$row['teacher_name']}</td>
-                    <td>{$row['subject_name']}</td>
-                    <td>{$row['student_name']}</td>
+                    <td>{$row['name']}</td>
+                    <td>{$row['name']}</td>
+                    <td>{$row['full_name']}</td>
                     <td>{$row['payment_amount']}</td>
                     <td>{$row['month']}</td>
                     <td>{$row['date']}</td>
