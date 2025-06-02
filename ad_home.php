@@ -185,6 +185,8 @@
           <li><a href="managepay.php"><i class="fas fa-file-invoice-dollar"></i> Manage Payment</a></li>
         </ul>
       </li>
+
+      
       <li><a href="ad_resources.php"><i class="fa fa-book"></i> Resources</a></li>
       <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
        <li><a href="admin_approval.php"><i class="fas fa-user-circle"></i> Approved Students</a></li>

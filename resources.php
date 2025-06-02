@@ -1,5 +1,5 @@
 <?php
-include "st_home.php";
+//include "st_home.php";
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
