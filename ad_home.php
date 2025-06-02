@@ -186,7 +186,7 @@
         </ul>
       </li>
 
-      <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
+      
        <li><a href="admin_approval.php"><i class="fas fa-user-circle"></i> Approved Students</a></li>
       <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
     </ul>
