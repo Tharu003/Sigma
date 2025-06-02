@@ -1,4 +1,7 @@
 <?php
+include "ad_home.php";
+?>
+<?php
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 
 if ($conn->connect_error) {

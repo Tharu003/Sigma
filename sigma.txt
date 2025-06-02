@@ -118,3 +118,17 @@ CREATE TABLE timetable (
     FOREIGN KEY (subject_id) REFERENCES subject(subject_id),
     FOREIGN KEY (teacher_id) REFERENCES teacher(teacher_id)
 );
+
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    teacher_id INT,
+    subject_id INT,
+    amount DECIMAL(10,2),
+    payment_date DATE,
+    payment_month YEAR,
+    payment_mode ENUM('offline', 'online'),
+    FOREIGN KEY (student_id) REFERENCES student(st_id),
+    FOREIGN KEY (teacher_id) REFERENCES teacher(teacher_id),
+    FOREIGN KEY (subject_id) REFERENCES subject(subject_id)
+);
