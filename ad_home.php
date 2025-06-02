@@ -185,13 +185,10 @@
           <li><a href="managepay.php"><i class="fas fa-file-invoice-dollar"></i> Manage Payment</a></li>
         </ul>
       </li>
-<<<<<<< HEAD
 
       
-=======
       <li><a href="ad_resources.php"><i class="fa fa-book"></i> Resources</a></li>
       <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
->>>>>>> 2fd57d08e90243c80cf15db569d94806697410db
        <li><a href="admin_approval.php"><i class="fas fa-user-circle"></i> Approved Students</a></li>
       <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
     </ul>
