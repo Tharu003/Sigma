@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $grade = mysqli_real_escape_string($conn, $_POST['grade']);
     $schedule = mysqli_real_escape_string($conn, $_POST['schedule']);
 
-    // Get class_id from grade
+   
     $sql_class = "SELECT class_id FROM class WHERE grade = '$grade' LIMIT 1";
     $res_class = mysqli_query($conn, $sql_class);
 
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row_class = mysqli_fetch_assoc($res_class);
         $class_id = $row_class['class_id'];
 
-        // Insert data into teach_sub_reg
+     
         $sql_insert = "INSERT INTO teach_sub_reg (teacher_id, class_id, subject_id, schedule)
                        VALUES ('$teacher_id', '$class_id', '$subject_id', '$schedule')";
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <?php endif; ?>
 
   <form method="POST" action="">
-    <!-- Teacher Dropdown -->
+  
     <div class="mb-3">
       <label for="teacher" class="form-label">Choose Teacher:</label>
       <select class="form-select" id="teacher" name="teacher_id" required>
@@ -78,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </select>
     </div>
 
-    <!-- Subject Dropdown -->
     <div class="mb-3">
       <label for="subject" class="form-label">Choose Subject:</label>
       <select class="form-select" id="subject" name="subject_id" required>
@@ -93,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </select>
     </div>
 
-    <!-- Grade Dropdown -->
+   
     <div class="mb-3">
       <label for="grade" class="form-label">Choose Grade:</label>
       <select class="form-select" id="grade" name="grade" required>
@@ -108,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </select>
     </div>
 
-    <!-- Schedule Textbox -->
+   
     <div class="mb-3">
       <label for="schedule" class="form-label">Enter Schedule:</label>
       <input type="text" class="form-control" id="schedule" name="schedule" placeholder="e.g., Monday 9AM - 11AM" required />
