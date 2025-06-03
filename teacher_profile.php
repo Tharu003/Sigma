@@ -48,14 +48,61 @@ while ($row = $sub_res->fetch_assoc()) {
 <meta charset="UTF-8">
 <title>Teacher Profile</title>
 <style>
-  body{font-family:'Segoe UI',sans-serif;background:#f4f4f4;padding:40px;display:flex;justify-content:center}
-  .main-content{margin-left:80px;margin-top:60px;padding:20px}
-  .profile-card{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.1);padding:40px 60px;max-width:1000px;width:100%}
-  h2{text-align:center;color:#2c3e50;margin-bottom:20px}
-  .info{margin:10px 0;font-size:16px}.info strong{color:#555}
-  .badge{display:inline-block;background:#3498db;color:#fff;padding:6px 12px;border-radius:20px;margin:5px 8px 0 0;font-size:14px}
-  img{display:block;margin:0 auto 20px;width:300px;height:400px;border-radius:12px;object-fit:cover}
-  a{display:inline-block;margin-top:20px;text-decoration:none;color:#2980b9}
+  body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f4f4;
+    padding:40px;
+    display:flex;
+    justify-content:center
+  }
+  .main-content{
+    margin-left:80px;
+    margin-top:60px;
+    padding:20px
+  }
+  .profile-card{
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+    padding:40px 60px;
+    max-width:1000px;
+    width:100%;
+  }
+  h2{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:20px;
+  }
+  .info{
+    margin:10px 0;
+    font-size:16px;
+  }
+  .info strong{
+    color:#555;
+  }
+  .badge{
+    display:inline-block;
+    background:#3498db;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    margin:5px 8px 0 0;
+    font-size:14px;
+  }
+  img{
+    display:block;
+    margin:0 auto 20px;
+    width:300px;
+    height:400px;
+    border-radius:12px;
+    object-fit:cover;
+  }
+  a{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    color:#2980b9;
+    }
 </style>
 </head>
 <body>
@@ -64,10 +111,6 @@ while ($row = $sub_res->fetch_assoc()) {
       <!-- teacher photo (adjust field name if different) -->
       <img src="uploads/<?= htmlspecialchars($teacher['photo']) ?>" alt="Teacher Photo">
       <h2><?= htmlspecialchars($teacher['full_name']) ?></h2>
-
-      
-      <p class="info"><strong>Contact:</strong> <?= htmlspecialchars($teacher['contact_no']) ?></p>
-      <p class="info"><strong>Qualification:</strong> <?= htmlspecialchars($teacher['qualification']) ?></p>
 
       <!-- SUBJECTS VIA Te_teach_sub -->
       <div class="info"><strong>Subjects:</strong><br>
@@ -79,6 +122,10 @@ while ($row = $sub_res->fetch_assoc()) {
             <span style="color:gray">No subjects assigned</span>
         <?php endif; ?>
       </div>
+      <p class="info"><strong>Contact No:</strong> <?= htmlspecialchars($teacher['contact_no']) ?></p>
+      <p class="info"><strong>Qualification:</strong> <?= htmlspecialchars($teacher['qualification']) ?></p>
+
+      
 
       <a href="teachers.php">← Back to Teachers</a>
     </div>
