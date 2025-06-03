@@ -115,7 +115,8 @@ $conn->close();
 ?>
 </div>
 </div>
-<br>
+</body>
+
  <footer>
     <div class="footer-links mb-2">
       <a href="index.php">Home</a> |
@@ -125,5 +126,5 @@ $conn->close();
     </div>
     <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
   </footer>
-</body>
+
 </html>

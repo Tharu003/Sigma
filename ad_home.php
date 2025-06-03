@@ -181,16 +181,21 @@
       <li class="dropdown">
         <button class="dropdown-btn"><i class="fas fa-money-check-alt"></i> Payment <i class="fas fa-chevron-down"></i></button>
         <ul class="submenu">
-          <li><a href="addpay.php"><i class="fas fa-dollar-sign"></i> Add Payment</a></li>
-          <li><a href="managepay.php"><i class="fas fa-file-invoice-dollar"></i> Manage Payment</a></li>
+          <li><a href="add_payment.php"><i class="fas fa-dollar-sign"></i> Add Payment</a></li>
+          <li><a href="manage_payment.php"><i class="fas fa-file-invoice-dollar"></i> Manage Payment</a></li>
         </ul>
       </li>
 
-      
-      <li><a href="ad_resources.php"><i class="fa fa-book"></i> Resources</a></li>
-      <li><a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a></li>
+      <li class="dropdown">
+        <button class="dropdown-btn"><i class="fas fa-money-check-alt"></i> Resources <i class="fas fa-chevron-down"></i></button>
+        <ul class="submenu">
+          <li><a href="add_resource.php"><i class="fas fa-dollar-sign"></i> Add Resources</a></li>
+          <li><a href="manage_resources.php"><i class="fas fa-file-invoice-dollar"></i> Manage Resources</a></li>
+        </ul>
+      </li>
+     
        <li><a href="admin_approval.php"><i class="fas fa-user-circle"></i> Approved Students</a></li>
-      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+      <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
     </ul>
   </div>
 

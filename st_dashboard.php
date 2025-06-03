@@ -457,6 +457,7 @@ footer {
       updateCount();
     });
   </script>
+  </div>
 
 </body>
 </html>
