@@ -1,53 +1,103 @@
-<?php include "st_home.php"; ?>
+<?php
+//include "st_home.php";
+$conn = new mysqli("localhost", "root", "", "sigma_db");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch resources with subject and class info
+$sql = "SELECT r.*, s.name AS name, c.name AS name 
+        FROM resources r
+        JOIN subject s ON r.subject_id = s.subject_id
+        JOIN class c ON r.class_id = c.class_id
+        ORDER BY r.uploaded_at DESC";
+
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .main-content {
-        margin-left: 0;
-        margin-top: 60px;
-        padding: 20px;
-        transition: margin-left 0.3s ease;
-    }
-     .sidebar.active ~ .main-content {
-    margin-left: 250px;
-    }
-    footer {
-      background-color: rgb(3, 3, 29);
-      color: #ffffff;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 16px;
-      margin-top: 60px;
-    }
-    footer .footer-links a {
-      color: #ffffff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    footer .footer-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <title>View Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .resource-table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .resource-table th, .resource-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        .resource-table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .download-btn {
+            background: #28a745;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        .no-data {
+            text-align: center;
+            color: #777;
+            padding: 40px;
+        }
+    </style>
 </head>
 <body>
-    <footer>
-    <div class="footer-links mb-2">
-      <a href="index.php">Home</a> |
-      <a href="about.php">About</a> |
-      <a href="contact.php">Contact</a> |
-      <a href="privacy.php">Privacy</a>
-    </div>
-    <div>&copy; <?= date("Y") ?> Sigma Institute. All rights reserved.</div>
-  </footer>
+
+<h2>Available Resources</h2>
+
+<?php if ($result->num_rows > 0): ?>
+    <table class="resource-table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Class</th>
+                <th>File Name</th>
+                <th>Uploaded At</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td><?= htmlspecialchars($row['file_name']) ?></td>
+                <td><?= htmlspecialchars(date("Y-m-d H:i", strtotime($row['uploaded_at']))) ?></td>
+                <td><a class="download-btn" href="<?= htmlspecialchars($row['file_path']) ?>" download>Download</a></td>
+            </tr>
+        <?php endwhile; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <div class="no-data">No resources available at the moment.</div>
+<?php endif; ?>
+
 </body>
-</html>    
+</html>
+
+<?php $conn->close(); ?>
