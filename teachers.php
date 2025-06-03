@@ -21,6 +21,9 @@ $result = $conn->query($sql);
             margin: 0;
             padding: 20px;
         }
+        h2{
+          font-size: 3em;
+        }
         .teacher-container {
             display: flex;
             flex-wrap: wrap;
@@ -31,7 +34,8 @@ $result = $conn->query($sql);
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            width: 250px;
+            width: 300px;
+            height: 375px;
             text-align: center;
             padding: 20px;
             transition: transform 0.3s ease;
@@ -40,8 +44,8 @@ $result = $conn->query($sql);
             transform: translateY(-5px);
         }
         .teacher-card img {
-            width: 120px;
-            height: 120px;
+            width: 175px;
+            height: 175px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
@@ -91,7 +95,7 @@ $result = $conn->query($sql);
 </head>
 <body>
 <div class="main-content" id="mainContent">
-<h2 style="text-align:center;">Our Teachers</h2>
+<h2 style="text-align:center;">Our Teachers</h2><br><br>
 <div class="teacher-container">
 <?php
 if ($result->num_rows > 0) {

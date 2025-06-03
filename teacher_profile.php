@@ -1,100 +1,87 @@
 <?php
+/* ───────── DB CONNECTION ───────── */
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+/* ───────── INPUT VALIDATION ───────── */
 if (!isset($_GET['teacher_id'])) {
     echo "Invalid request.";
     exit();
 }
-
 $teacher_id = intval($_GET['teacher_id']);
+
+/* ───────── GET TEACHER DATA ───────── */
 $stmt = $conn->prepare("SELECT * FROM teacher WHERE teacher_id = ?");
 $stmt->bind_param("i", $teacher_id);
 $stmt->execute();
-$result = $stmt->get_result();
-$teacher = $result->fetch_assoc();
-
+$teacher = $stmt->get_result()->fetch_assoc();
 if (!$teacher) {
     echo "Teacher not found.";
     exit();
 }
+
+/* ───────── GET SUBJECTS TAUGHT (using Te_teach_sub) ───────── */
+$sub_sql = "
+    SELECT s.name
+    FROM Te_teach_sub tts
+    JOIN Subject s ON s.subject_id = tts.subject_id
+    WHERE tts.teacher_id = ?
+    ORDER BY s.name
+";
+$sub_stmt = $conn->prepare($sub_sql);
+$sub_stmt->bind_param("i", $teacher_id);
+$sub_stmt->execute();
+$sub_res = $sub_stmt->get_result();
+
+$subjects = [];
+while ($row = $sub_res->fetch_assoc()) {
+    $subjects[] = $row['name'];          //   ↑ column name in Subject table
+}
 ?>
-<?php include "st_home.php";
-?>
+<?php include "st_home.php"; /* (optional) top-bar / sidebar template */ ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Teacher Profile</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
-    }
-    .main-content {
-      margin-left: 80px;
-      margin-top: 60px;
-      padding: 20px;
-      transition: margin-left 0.3s ease;
-    }
-    .sidebar.active ~ .main-content {
-      margin-left: 250px;
-    }
-
-    .profile-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      padding: 80px;
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .info {
-      margin: 10px 0;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .info strong {
-      color: #555;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: #2980b9;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Teacher Profile</title>
+<style>
+  body{font-family:'Segoe UI',sans-serif;background:#f4f4f4;padding:40px;display:flex;justify-content:center}
+  .main-content{margin-left:80px;margin-top:60px;padding:20px}
+  .profile-card{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.1);padding:40px 60px;max-width:1000px;width:100%}
+  h2{text-align:center;color:#2c3e50;margin-bottom:20px}
+  .info{margin:10px 0;font-size:16px}.info strong{color:#555}
+  .badge{display:inline-block;background:#3498db;color:#fff;padding:6px 12px;border-radius:20px;margin:5px 8px 0 0;font-size:14px}
+  img{display:block;margin:0 auto 20px;width:300px;height:400px;border-radius:12px;object-fit:cover}
+  a{display:inline-block;margin-top:20px;text-decoration:none;color:#2980b9}
+</style>
 </head>
 <body>
-  <div class="main-content" id="mainContent">
+  <div class="main-content">
+    <div class="profile-card">
+      <!-- teacher photo (adjust field name if different) -->
+      <img src="uploads/<?= htmlspecialchars($teacher['photo']) ?>" alt="Teacher Photo">
+      <h2><?= htmlspecialchars($teacher['full_name']) ?></h2>
 
-<div class="profile-card">
-  <img src="uploads/<?= htmlspecialchars($teacher['photo']) ?>" alt="Teacher Photo" style="width: 300px;height:400px; border-radius: 12px;">
-  <h2><?= htmlspecialchars($teacher['full_name']) ?></h2>
+      
+      <p class="info"><strong>Contact:</strong> <?= htmlspecialchars($teacher['contact_no']) ?></p>
+      <p class="info"><strong>Qualification:</strong> <?= htmlspecialchars($teacher['qualification']) ?></p>
 
-  <p class="info"><strong>Email:</strong> <?= htmlspecialchars($teacher['email']) ?></p>
-  <p class="info"><strong>Contact:</strong> <?= htmlspecialchars($teacher['contact_no']) ?></p>
-  <p class="info"><strong>Address:</strong> <?= htmlspecialchars($teacher['address']) ?></p>
-  <p class="info"><strong>Date of Birth:</strong> <?= htmlspecialchars($teacher['dob']) ?></p>
-  <p class="info"><strong>Qualification:</strong> <?= htmlspecialchars($teacher['qualification']) ?></p>
+      <!-- SUBJECTS VIA Te_teach_sub -->
+      <div class="info"><strong>Subjects:</strong><br>
+        <?php if ($subjects): ?>
+            <?php foreach ($subjects as $sub): ?>
+              <span class="badge"><?= htmlspecialchars($sub) ?></span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span style="color:gray">No subjects assigned</span>
+        <?php endif; ?>
+      </div>
 
-  <a href="teachers.php">← Back to Teachers</a>
-</div>
+      <a href="teachers.php">← Back to Teachers</a>
+    </div>
   </div>
 </body>
 </html>
