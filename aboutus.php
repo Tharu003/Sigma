@@ -292,7 +292,7 @@ footer {
   <section class="inception-card">
   <div class="inception-box">
     <div class="inception-image">
-      <img src="images/about.jpg" alt="Sigma Institute Founder">
+      <img src="images/about1.jpg" alt="Sigma Institute Founder">
     </div>
     <div class="inception-text">
       <h2>Inception of Sigma Institute</h2>
