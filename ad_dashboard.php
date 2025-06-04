@@ -203,6 +203,8 @@ include "ad_home.php";
       }
     });
   </script>
+<br>
+</div>
 
 </body>
 </html>
