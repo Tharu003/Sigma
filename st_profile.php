@@ -26,7 +26,7 @@ $student = $res_student->fetch_assoc();
 // Fetch Enrolled Subjects
 // ==========================
 $sql_enroll = "
-  SELECT s.name AS subject_name, c.name AS class_name, r.year
+  SELECT s.name AS subject_name, c.grade AS class_name, r.year
   FROM register r
   JOIN subject s ON r.subject_id = s.subject_id
   JOIN class c ON r.class_id = c.class_id
