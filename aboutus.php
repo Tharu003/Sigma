@@ -292,7 +292,7 @@ footer {
   <section class="inception-card">
   <div class="inception-box">
     <div class="inception-image">
-      <img src="images/sanjeewa.jpg" alt="Sigma Institute Founder">
+      <img src="images/about.jpg" alt="Sigma Institute Founder">
     </div>
     <div class="inception-text">
       <h2>Inception of Sigma Institute</h2>
@@ -309,7 +309,7 @@ footer {
         shortcomings. Tell us your suggestions.<br><br>
 
         Thank you,<br>
-        <strong>I am Nishara</strong><br>
+        <strong>I am Sanjeewa</strong><br>
         Managing Director and Founder<br>
         Sigma Education Institute.
       </p>
