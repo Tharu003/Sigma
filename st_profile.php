@@ -1,106 +1,126 @@
+<?php
+// DB Connection
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "sigma_db";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$student_id = $_GET['st_id']; // Or use session
+
+// ==========================
+// Fetch Student Info
+// ==========================
+$sql_student = "SELECT * FROM student WHERE st_id = ?";
+$stmt = $conn->prepare($sql_student);
+$stmt->bind_param("i", $student_id);
+$stmt->execute();
+$res_student = $stmt->get_result();
+$student = $res_student->fetch_assoc();
+
+// ==========================
+// Fetch Enrolled Subjects
+// ==========================
+$sql_enroll = "
+  SELECT s.name AS subject_name, c.name AS class_name, r.year
+  FROM register r
+  JOIN subject s ON r.subject_id = s.subject_id
+  JOIN class c ON r.class_id = c.class_id
+  WHERE r.st_id = ?
+";
+$stmt = $conn->prepare($sql_enroll);
+$stmt->bind_param("i", $student_id);
+$stmt->execute();
+$res_enroll = $stmt->get_result();
+
+// ==========================
+// Fetch Payment History
+// ==========================
+$sql_payment = "
+  SELECT s.name AS subject_name, t.full_name AS teacher_name, p.amount, p.payment_date, p.payment_month
+  FROM payment p
+  JOIN subject s ON p.subject = s.subject_id
+  JOIN teacher t ON p.teacher_id = t.teacher_id
+  WHERE p.student_id = ?
+";
+$stmt = $conn->prepare($sql_payment);
+$stmt->bind_param("i", $student_id);
+$stmt->execute();
+$res_payment = $stmt->get_result();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Student Profile</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.main-content {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.profile-card {
-  display: flex;
-  background: #000;
-  color: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.2);
-  padding: 40px;
-  gap: 40px;
-}
-
-.profile-card img {
-  width: 280px;
-  height: 380px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 3px solid #fff;
-}
-
-.profile-details {
-  flex: 1;
-}
-
-.profile-details h2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.info {
-  margin: 12px 0;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-}
-
-.info strong {
-  width: 160px;
-  display: inline-block;
-  color: #ccc;
-}
-
-.badge {
-  display: inline-block;
-  background: #9b59b6;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin: 5px 8px 0 0;
-  font-size: 14px;
-}
-
-a {
-  display: inline-block;
-  margin-top: 30px;
-  text-decoration: none;
-  color: #00aaff;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="main-content">
-    <div class="profile-card">
-      <img src="uploads/<?= htmlspecialchars($student['photo']) ?>" alt="Student Photo">
 
-      <div class="profile-details">
-        <h2><?= htmlspecialchars($student['full_name']) ?></h2>
+<div class="container">
 
-        <p class="info"><strong>Student ID:</strong> <?= htmlspecialchars($student['student_index']) ?></p>
-        <p class="info"><strong>Contact:</strong> <?= htmlspecialchars($student['contact_no']) ?></p>
-        <p class="info"><strong>Grade:</strong> <?= htmlspecialchars($student['grade']) ?></p>
-        <p class="info"><strong>Stream:</strong> <?= htmlspecialchars($student['stream']) ?></p>
-        <p class="info"><strong>Enrolled Year:</strong> <?= htmlspecialchars($student['enroll_year']) ?></p>
-        <p class="info"><strong>Status:</strong> <?= htmlspecialchars($student['status']) ?></p>
-
-        <div class="info"><strong>Subjects:</strong><br>
-          
-
-        <a href="students.php">← Back to Students</a>
-      </div>
-    </div>
+  <!-- 🔹 Student Info -->
+  <div class="card">
+    <h2>👤 Student Info</h2>
+    <p><strong>Name:</strong> <?= htmlspecialchars($student['full_name']) ?></p>
+    <p><strong>Address:</strong> <?= htmlspecialchars($student['address']) ?></p>
+    <p><strong>DOB:</strong> <?= htmlspecialchars($student['dob']) ?></p>
+    <p><strong>WhatsApp:</strong> <?= htmlspecialchars($student['whatsapp_no']) ?></p>
+    <p><strong>Guardian:</strong> <?= htmlspecialchars($student['guardian_name']) ?> (<?= htmlspecialchars($student['guardian_contact']) ?>)</p>
+    <p><strong>Email:</strong> <?= htmlspecialchars($student['email']) ?></p>
   </div>
+
+  <!-- 🔹 Enrolled Subjects -->
+  <div class="card">
+    <h2>📚 Enrolled Subjects</h2>
+    <ul>
+      <?php if ($res_enroll->num_rows > 0): ?>
+        <?php while ($row = $res_enroll->fetch_assoc()): ?>
+          <li><?= htmlspecialchars($row['subject_name']) ?> – <?= htmlspecialchars($row['class_name']) ?> (<?= $row['year'] ?>)</li>
+        <?php endwhile; ?>
+      <?php else: ?>
+        <li>No subjects enrolled.</li>
+      <?php endif; ?>
+    </ul>
+  </div>
+
+  <!-- 🔹 Payment History -->
+  <div class="card">
+    <h2>💳 Payment History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Teacher</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Month</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php if ($res_payment->num_rows > 0): ?>
+          <?php while ($row = $res_payment->fetch_assoc()): ?>
+            <tr>
+              <td><?= htmlspecialchars($row['subject_name']) ?></td>
+              <td><?= htmlspecialchars($row['teacher_name']) ?></td>
+              <td>Rs. <?= htmlspecialchars($row['amount']) ?></td>
+              <td><?= htmlspecialchars($row['payment_date']) ?></td>
+              <td><?= htmlspecialchars($row['payment_mont']) ?></td>
+            </tr>
+          <?php endwhile; ?>
+        <?php else: ?>
+          <tr><td colspan="5">No payments found.</td></tr>
+        <?php endif; ?>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
 </body>
 </html>
