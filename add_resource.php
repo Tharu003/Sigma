@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Save to DB if no error
+  
     if ($message === "") {
         $stmt = $conn->prepare("INSERT INTO resources (title, description, type, file_path, link_url) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $title, $description, $type, $file_path, $link_url);

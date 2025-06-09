@@ -1,7 +1,6 @@
 <?php
 include 'db.php';
 
-// Handle AJAX request to fetch teachers by grade
 if (isset($_POST['action']) && $_POST['action'] === 'fetch_teachers' && isset($_POST['grade'])) {
     header('Content-Type: application/json');
     $grade = mysqli_real_escape_string($conn, $_POST['grade']);

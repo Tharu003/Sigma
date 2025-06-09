@@ -16,7 +16,7 @@
 
   <h2 class="mb-4">View Registered Student</h2>
 
-  <!-- Combined Filter Form -->
+  
   <form method="GET" class="mb-4">
     <div class="row g-2">
       <div class="col-md-3">
@@ -52,7 +52,7 @@
           <option value="">Select Year</option>
           <?php
           $selected_year = $_GET['year'] ?? '';
-          // Get distinct years from register table
+          
           $years = $conn->query("SELECT DISTINCT year FROM register ORDER BY year DESC");
           while ($row = $years->fetch_assoc()) {
             $selected = ($selected_year == $row['year']) ? 'selected' : '';
@@ -69,7 +69,7 @@
     </div>
   </form>
 
-  <!-- Student Search Section -->
+  
   <div class="section-title"><h4>Search Student's Classes</h4></div>
   <form method="GET" class="mb-4">
     <div class="input-group">
@@ -80,14 +80,13 @@
   </form>
 
   <?php
-  // Delete handler for student registration removal
   if (isset($_GET['delete_id'])) {
     $del_id = (int)$_GET['delete_id'];
     $conn->query("DELETE FROM register WHERE st_id = $del_id");
     echo "<div class='alert alert-warning'>Registration deleted. <a href='check4.php'>Undo</a></div>";
   }
 
-  // Student search functionality
+
   if (!empty($_GET['student_search'])) {
     $search = $conn->real_escape_string($_GET['student_search']);
     $sql = "SELECT r.st_id, s.full_name, c.grade, sub.name AS subject, r.year
@@ -113,18 +112,18 @@
     }
   }
 
-  // Filter classes by grade, subject, and year with pagination
+  
   if (!empty($_GET['class_id']) || !empty($_GET['subject_id']) || !empty($_GET['year'])) {
     $class_id = isset($_GET['class_id']) && $_GET['class_id'] !== '' ? (int)$_GET['class_id'] : null;
     $subject_id = isset($_GET['subject_id']) && $_GET['subject_id'] !== '' ? (int)$_GET['subject_id'] : null;
     $year = isset($_GET['year']) && $_GET['year'] !== '' ? (int)$_GET['year'] : null;
 
-    // Pagination setup
-    $limit = 5; // items per page
+    
+    $limit = 5; 
     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
     $offset = ($page - 1) * $limit;
 
-    // Build WHERE conditions dynamically
+    
     $conditions = [];
     if ($class_id) $conditions[] = "r.class_id = $class_id";
     if ($subject_id) $conditions[] = "r.subject_id = $subject_id";
@@ -135,7 +134,7 @@
       $where_sql = 'WHERE ' . implode(' AND ', $conditions);
     }
 
-    // Count total unique combinations for pagination (subject + year combinations)
+    
     $count_sql = "SELECT COUNT(DISTINCT CONCAT(r.subject_id, '_', r.year)) as total
                   FROM register r
                   $where_sql";
@@ -143,7 +142,7 @@
     $total_rows = $count_result->fetch_assoc()['total'];
     $total_pages = ceil($total_rows / $limit);
 
-    // Fetch paginated unique subject + year combinations
+    
     $sql = "SELECT DISTINCT r.subject_id, r.year, sub.name AS subject
             FROM register r
             JOIN subject sub ON r.subject_id = sub.subject_id
@@ -153,7 +152,7 @@
 
     $result = $conn->query($sql);
 
-    // Get grade for display (if class_id is selected)
+    
     $grade = '';
     if ($class_id) {
       $res_grade = $conn->query("SELECT grade FROM class WHERE class_id = $class_id LIMIT 1");
@@ -172,7 +171,7 @@
                 <div class='card-header bg-success text-white'>Grade: " . ($grade ?: 'Any') . " | Subject: $subject | Year: $year</div>
                 <div class='card-body'>";
 
-        // Fetch students in this class/subject/year group
+        
         $student_conditions = [];
         if ($class_id) $student_conditions[] = "r.class_id = $class_id";
         if ($subject_id) $student_conditions[] = "r.subject_id = $subject_id";
@@ -188,8 +187,7 @@
                            AND r.year = $year
                          ORDER BY s.full_name ASC";
 
-        // To handle $class_id null case:
-        // If $class_id is null, remove that filter from this query:
+      
         if (!$class_id) {
           $students_sql = "SELECT r.st_id, s.full_name
                            FROM register r
@@ -216,7 +214,7 @@
         echo "</div></div>";
       }
 
-      // Pagination controls
+      
       echo "<nav>";
       echo "<ul class='pagination'>";
       $query_params = $_GET;

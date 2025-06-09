@@ -8,7 +8,7 @@ if (isset($_GET['approve'])) {
     $stmt = $bdd->prepare("UPDATE users SET status = 'approved' WHERE id = ?");
     $stmt->execute([$id]);
 
-    // Redirect with alert
+
     echo "<script>
             alert('Student approved successfully!');
             window.location.href = 'ad_dashboard.php';

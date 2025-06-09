@@ -200,26 +200,22 @@
   </div>
 
   <script>
-    // Toggle sidebar
     const sidebar = document.getElementById('sidebar');
     const sidebarBtn = document.getElementById('sidebar_btn');
     sidebarBtn.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
 
-    // Toggle dropdowns
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
       const button = dropdown.querySelector('.dropdown-btn');
       const menu = dropdown.querySelector('.submenu');
 
       button.addEventListener('click', () => {
-        // Close all other submenus
         document.querySelectorAll('.submenu').forEach(sub => {
           if (sub !== menu) sub.style.display = 'none';
         });
 
-        // Toggle the selected submenu
         const isVisible = menu.style.display === 'block';
         menu.style.display = isVisible ? 'none' : 'block';
       });
