@@ -125,7 +125,7 @@ include "ad_home.php";
   </div>
 
   <script>
-    // Line Chart (Attendance)
+
     new Chart(document.getElementById('lineChart'), {
   type: 'line',
   data: {
@@ -140,7 +140,7 @@ include "ad_home.php";
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false, // Add this line
+    maintainAspectRatio: false, 
     plugins: {
       legend: {
         labels: {
@@ -164,7 +164,7 @@ include "ad_home.php";
 });
 
 
-    // Bar Chart (Students per class)
+
    new Chart(document.getElementById('barChart'), {
   type: 'bar',
   data: {
@@ -187,7 +187,6 @@ include "ad_home.php";
 });
 
 
-    // Pie Chart (Payment Status)
     new Chart(document.getElementById('pieChart'), {
       type: 'doughnut',
       data: {

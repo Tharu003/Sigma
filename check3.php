@@ -2,13 +2,11 @@
 session_start();
 include "db.php";
 
-// ✅ Clear filters only if user clicked "Clear Filters" button
 if (isset($_GET['clear']) && $_GET['clear'] == 1) {
     header("Location: check3.php");
     exit;
 }
 
-// Handle registration
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $grade = $_POST['grade'];
     $subject_id = $_POST['subject_id'];
@@ -46,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     exit;
 }
 
-// Handle Undo
+
 if (isset($_POST['undo'])) {
     if (!empty($_SESSION['last_registered'])) {
         foreach ($_SESSION['last_registered'] as $entry) {
@@ -59,7 +57,7 @@ if (isset($_POST['undo'])) {
     exit;
 }
 
-// Fetch dropdown data
+
 $grades = mysqli_query($conn, "SELECT DISTINCT grade FROM class");
 $subjects = mysqli_query($conn, "SELECT * FROM subject");
 $students = mysqli_query($conn, "SELECT st_id, full_name FROM student");

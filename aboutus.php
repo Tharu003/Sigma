@@ -79,7 +79,7 @@
     }
 
     .logo-box:hover::after {
-      content: url('images/logo.png'); /* Replace with your logo path */
+      content: url('images/logo.png'); 
       position: absolute;
       top: 0;
       left: 0;
@@ -208,14 +208,14 @@
   margin-bottom: 10px;
 }
 .logo-card .card-back {
-  background-color: transparent; /* remove background */
+  background-color: transparent; 
   padding: 0;
 }
 
 .logo-card .card-back img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* or cover if you want it fully filled */
+  object-fit: contain; 
   border-radius: 12px;
 }
 .facilities-cards {

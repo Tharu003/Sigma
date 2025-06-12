@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db = 'sigma_db'; // your database name
-$user = 'root'; // default user in XAMPP
-$pass = ''; // default password in XAMPP is empty
+$db = 'sigma_db'; 
+$user = 'root'; 
+$pass = ''; 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

@@ -27,7 +27,7 @@
 </head>
 <body>
 
-  <!-- Content above footer -->
+
 
   <footer>
     <div class="footer-links">

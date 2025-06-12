@@ -10,7 +10,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$student_id = $_GET['st_id']; 
+if ($_SESSION['student_id'] != $_GET['st_id']) {
+    die("Unauthorized access.");
+} 
 
 
 $sql_student = "SELECT * FROM student WHERE st_id = ?";
