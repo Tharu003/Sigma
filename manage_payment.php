@@ -5,22 +5,24 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Fetch students (users)
+$students = $conn->query("SELECT id, name FROM users");
 
-$students = $conn->query("SELECT st_id, full_name FROM student");
+// Fetch teachers
 $teachers = $conn->query("SELECT teacher_id, full_name FROM teacher");
 
-
+// Fetch payments with proper JOIN aliases
 $payments = $conn->query("
     SELECT 
         p.payment_id, 
-        s.full_name AS student_name, 
+        s.name AS student_name, 
         t.full_name AS teacher_name, 
         p.subject, 
         p.amount, 
         p.payment_date, 
         p.payment_month 
     FROM payment p 
-    JOIN student s ON p.student_id = s.st_id 
+    JOIN users s ON p.student_id = id 
     JOIN teacher t ON p.teacher_id = t.teacher_id
 ");
 ?>
@@ -28,106 +30,102 @@ $payments = $conn->query("
 <html>
 <head>
     <title>Manage Payments</title>
-  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
-             .main-content {
+    .main-content {
         margin-left: 80px;
         margin-top: 60px;
         padding: 20px;
         transition: margin-left 0.3s ease;
     }
-.sidebar.active ~ .main-content {
+    .sidebar.active ~ .main-content {
         margin-left: 250px;
     }
-        </style>
+  </style>
 </head>
 <body>
-    <div class="main-content" id="mainContent">
-<div class="container mt-4">
-    <h3>Manage Payments</h3>
+<div class="main-content" id="mainContent">
+    <div class="container mt-4">
+        <h3>Manage Payments</h3>
 
-   
-    <div class="row mb-3">
-        <div class="col-md-3">
-            <label for="studentFilter" class="form-label">Student:</label>
-            <select id="studentFilter" class="form-select">
-                <option value="">All</option>
-                <?php while($row = $students->fetch_assoc()): ?>
-                    <option value="<?= htmlspecialchars($row['full_name']) ?>"><?= htmlspecialchars($row['full_name']) ?></option>
-                <?php endwhile; ?>
-            </select>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="studentFilter" class="form-label">Student:</label>
+                <select id="studentFilter" class="form-select">
+                    <option value="">All</option>
+                    <?php while ($row = $students->fetch_assoc()): ?>
+                        <option value="<?= htmlspecialchars($row['name']) ?>"><?= htmlspecialchars($row['name']) ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="teacherFilter" class="form-label">Teacher:</label>
+                <select id="teacherFilter" class="form-select">
+                    <option value="">All</option>
+                    <?php while ($row = $teachers->fetch_assoc()): ?>
+                        <option value="<?= htmlspecialchars($row['full_name']) ?>"><?= htmlspecialchars($row['full_name']) ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="monthFilter" class="form-label">Payment Month:</label>
+                <input type="text" id="monthFilter" class="form-control" placeholder="e.g., June 2025">
+            </div>
         </div>
-        <div class="col-md-3">
-            <label for="teacherFilter" class="form-label">Teacher:</label>
-            <select id="teacherFilter" class="form-select">
-                <option value="">All</option>
-                <?php while($row = $teachers->fetch_assoc()): ?>
-                    <option value="<?= htmlspecialchars($row['full_name']) ?>"><?= htmlspecialchars($row['full_name']) ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div class="col-md-3">
-            <label for="monthFilter" class="form-label">Payment Month:</label>
-            <input type="text" id="monthFilter" class="form-control" placeholder="e.g., June 2025">
-        </div>
-    </div>
 
-    <table id="paymentsTable" class="display table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Student</th>
-                <th>Teacher</th>
-                <th>Subject</th>
-                <th>Amount</th>
-                <th>Payment Date</th>
-                <th>Payment Month</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($row = $payments->fetch_assoc()): ?>
+        <table id="paymentsTable" class="display table table-bordered">
+            <thead>
                 <tr>
-                    <td><?= htmlspecialchars($row['payment_id']) ?></td>
-                    <td><?= htmlspecialchars($row['student_name']) ?></td>
-                    <td><?= htmlspecialchars($row['teacher_name']) ?></td>
-                    <td><?= htmlspecialchars($row['subject']) ?></td>
-                    <td><?= htmlspecialchars($row['amount']) ?></td>
-                    <td><?= htmlspecialchars($row['payment_date']) ?></td>
-                    <td><?= htmlspecialchars($row['payment_month']) ?></td>
+                    <th>ID</th>
+                    <th>Student</th>
+                    <th>Teacher</th>
+                    <th>Subject</th>
+                    <th>Amount</th>
+                    <th>Payment Date</th>
+                    <th>Payment Month</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                <?php while ($row = $payments->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($row['payment_id']) ?></td>
+                        <td><?= htmlspecialchars($row['student_name']) ?></td>
+                        <td><?= htmlspecialchars($row['teacher_name']) ?></td>
+                        <td><?= htmlspecialchars($row['subject']) ?></td>
+                        <td><?= htmlspecialchars($row['amount']) ?></td>
+                        <td><?= htmlspecialchars($row['payment_date']) ?></td>
+                        <td><?= htmlspecialchars($row['payment_month']) ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
 <script>
 $(document).ready(function() {
-  
     var table = $('#paymentsTable').DataTable();
 
-   
     $('#studentFilter').on('change', function () {
         table.column(1).search(this.value).draw();
     });
 
-  
     $('#teacherFilter').on('change', function () {
         table.column(2).search(this.value).draw();
     });
 
- 
     $('#monthFilter').on('keyup change', function () {
         table.column(6).search(this.value).draw();
     });
 });
 </script>
+
+</body>
+</html>
+
 
 
 <?php
@@ -189,6 +187,7 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </div>
+            </div>
 
 <script>
 $(document).ready(function() {

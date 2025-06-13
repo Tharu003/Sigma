@@ -1,18 +1,18 @@
 <?php
-/* ───────── DB CONNECTION ───────── */
+
 $conn = new mysqli("localhost", "root", "", "sigma_db");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-/* ───────── INPUT VALIDATION ───────── */
+
 if (!isset($_GET['teacher_id'])) {
     echo "Invalid request.";
     exit();
 }
 $teacher_id = intval($_GET['teacher_id']);
 
-/* ───────── GET TEACHER DATA ───────── */
+
 $stmt = $conn->prepare("SELECT * FROM teacher WHERE teacher_id = ?");
 $stmt->bind_param("i", $teacher_id);
 $stmt->execute();
@@ -22,7 +22,7 @@ if (!$teacher) {
     exit();
 }
 
-/* ───────── GET SUBJECTS TAUGHT (using Te_teach_sub) ───────── */
+
 $sub_sql = "
     SELECT s.name
     FROM Te_teach_sub tts
@@ -37,10 +37,10 @@ $sub_res = $sub_stmt->get_result();
 
 $subjects = [];
 while ($row = $sub_res->fetch_assoc()) {
-    $subjects[] = $row['name'];          //   ↑ column name in Subject table
+    $subjects[] = $row['name'];          
 }
 ?>
-<?php include "st_home.php"; /* (optional) top-bar / sidebar template */ ?>
+<?php include "st_home.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,11 +108,11 @@ while ($row = $sub_res->fetch_assoc()) {
 <body>
   <div class="main-content">
     <div class="profile-card">
-      <!-- teacher photo (adjust field name if different) -->
+      
       <img src="uploads/<?= htmlspecialchars($teacher['photo']) ?>" alt="Teacher Photo">
       <h2><?= htmlspecialchars($teacher['full_name']) ?></h2>
 
-      <!-- SUBJECTS VIA Te_teach_sub -->
+      
       <div class="info"><strong>Subjects:</strong><br>
         <?php if ($subjects): ?>
             <?php foreach ($subjects as $sub): ?>

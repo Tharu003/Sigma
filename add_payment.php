@@ -6,31 +6,31 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$students = $conn->query("SELECT st_id, full_name FROM student");
+$students = $conn->query("SELECT id, name FROM users");
 $teachers = $conn->query("SELECT teacher_id, full_name FROM teacher");
-$subjects = $conn->query("SELECT subject_id, name FROM subject"); // ✅ Directly get subjects from DB
+$subjects = $conn->query("SELECT subject_id, name FROM subject");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $student_id = $_POST['student_id'];
     $teacher_id = $_POST['teacher_id'];
-    $subject_id = $_POST['subject_id'];
+    $subject_id = $_POST['subject_id']; 
     $amount = $_POST['amount'];
     $payment_date = $_POST['payment_date'];
     $payment_month = $_POST['payment_month'];
 
-    // Get subject name
-    $stmt = $conn->prepare("SELECT name FROM subject WHERE subject_id = ?");
-    $stmt->bind_param("i", $subject_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $subject_name = $result->fetch_assoc()['name'];
-    $stmt->close();
+    
+    $subject_query = $conn->prepare("SELECT name FROM subject WHERE subject_id = ?");
+    $subject_query->bind_param("i", $subject_id);
+    $subject_query->execute();
+    $subject_query->bind_result($subject_name);
+    $subject_query->fetch();
+    $subject_query->close();
 
-    // Insert payment
+    
     $stmt = $conn->prepare("INSERT INTO payment (student_id, teacher_id, subject, amount, payment_date, payment_month) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("iisdss", $student_id, $teacher_id, $subject_name, $amount, $payment_date, $payment_month);
     $stmt->execute();
-    $stmt->close();
+    $stmt->close(); 
 
     $message = "✅ Payment saved successfully!";
 }
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <select name="student_id" class="form-select" required>
         <option value="">Select Student</option>
         <?php while($row = $students->fetch_assoc()): ?>
-          <option value="<?= $row['st_id'] ?>"><?= htmlspecialchars($row['full_name']) ?></option>
+          <option value="<?= $row['id'] ?>"><?= htmlspecialchars($row['name']) ?></option>
         <?php endwhile; ?>
       </select>
     </div>
@@ -87,7 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <label class="form-label">Subject</label>
       <select name="subject_id" class="form-select" required>
         <option value="">Select Subject</option>
-        <?php while($row = $subjects->fetch_assoc()): ?>
+        <?php
+        $subjects = $conn->query("SELECT subject_id, name FROM subject"); // Re-run if previous loop exhausted
+        while($row = $subjects->fetch_assoc()): ?>
           <option value="<?= $row['subject_id'] ?>"><?= htmlspecialchars($row['name']) ?></option>
         <?php endwhile; ?>
       </select>

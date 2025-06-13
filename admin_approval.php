@@ -11,7 +11,7 @@ if (isset($_GET['approve'])) {
 
     echo "<script>
             alert('Student approved successfully!');
-            window.location.href = 'ad_dashboard.php';
+            window.location.href = 'admin_approval.php';
           </script>";
     exit;
 }

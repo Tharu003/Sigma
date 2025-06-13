@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql_update = "UPDATE subject SET name='$name' WHERE subject_id='$subject_id'";
     if ($conn->query($sql_update) === TRUE) {
-        header("Location: manage_subject.php?msg=updated");
+        header("Location: managesubject.php?msg=updated");
         exit();
     } else {
         echo "Update error: " . $conn->error;

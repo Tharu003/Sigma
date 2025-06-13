@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Success message
         echo '<script>
             alert("Registration successful. Awaiting admin approval.");
-            window.location.href = "student_reg.php";
+            window.location.href = "home.php";
         </script>';
     } catch (PDOException $e) {
         echo '<script>
